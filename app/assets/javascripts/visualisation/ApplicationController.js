@@ -1,9 +1,9 @@
   function ApplicationController(socket){
     this.socket = socket;
     
-        this.gridster = $(".visualisation").gridster({
+        this.gridster = $(".gridster").gridster({
       widget_margins: [10, 10],
-      widget_base_dimensions: [140, 140]
+      widget_base_dimensions: [50, 50]
     }).data('gridster');
     
     this.gridster.disable();
