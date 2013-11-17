@@ -6,6 +6,8 @@
       widget_base_dimensions: [140, 140]
     }).data('gridster');
     
+    this.gridster.disable();
+    
     this.panelFactory = new PanelFactory(this.gridster, this.socket, this);
     
     this.changePage(0);

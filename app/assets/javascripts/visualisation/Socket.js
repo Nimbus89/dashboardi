@@ -1,6 +1,6 @@
   function Socket(http, cb){
     var self = this;
-    self.websocket = new WebSocket(http);
+    self.websocket = new WebSocket(http, "visu-protocol");
     self.subscriptions = {};
     
     setTimeout(testready,500);
@@ -19,7 +19,7 @@
   
   Socket.prototype.process_message = function(evt){
     var obj = JSON.parse(evt.data);
-    this.trigger_callbacks(obj.key, obj.data);
+    this.trigger_callbacks(obj.key, obj.val);
   }
   
   Socket.prototype.clear_subscriptions = function(){
@@ -35,7 +35,7 @@
   
   Socket.prototype.trigger_callbacks = function(key, data){
     for(var i = 0; i < this.subscriptions[key].length; i++){
-      this.subscriptions[key][i](data);
+      this.subscriptions[key][i].update(data);
     }
   }
   

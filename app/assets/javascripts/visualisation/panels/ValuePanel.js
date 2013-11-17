@@ -15,7 +15,7 @@ function ValuePanel(json, socket, gridster){
   
   this.template = HandlebarsTemplates["ValuePanel"];
   this.render();
-  this.socket.add_subscription(json.properties.key, this.update);
+  this.socket.add_subscription(json.properties.key, this);
 }
 
 ValuePanel.prototype.render = function(){

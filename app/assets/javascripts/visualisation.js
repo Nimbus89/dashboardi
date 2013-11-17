@@ -8,7 +8,7 @@
 
 jQuery(function($){
   
-  var socket = new Socket("ws://echo.websocket.org", function(){
+  var socket = new Socket(project.websocket_address, function(){
     var app = new ApplicationController(socket);
   });
 
