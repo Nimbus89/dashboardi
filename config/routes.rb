@@ -1,5 +1,8 @@
 OpenVisu::Application.routes.draw do
 
+  get "sse/random"
+  get "sse/test"
+
   get "visualisation/example"
   root to: 'application#welcome'
   

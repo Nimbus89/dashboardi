@@ -1,24 +1,41 @@
-  function Socket(http, cb){
+  function Socket(protocol, http, cb){
     var self = this;
-    self.websocket = new WebSocket(http, "visu-protocol");
+    self.protocol = protocol;
     self.subscriptions = {};
     
-    setTimeout(testready,500);
-    
-    function testready(){
-      if(self.websocket.readyState===1){
-        cb();
-      }
-      else{
-        setTimeout(testready,500);
-      }
+    if(self.protocol === "websocket"){
+      self.websocket = new WebSocket(http, "visu-protocol");
+      setTimeout(testready,500);
+      self.websocket.onmessage = function(evt){self.process_websocket_message(evt);};
+      
+    } else if(self.protocol === "sse"){
+      self.source = new EventSource('/sse/random');
+      self.source.addEventListener("update", function(e){
+        self.process_sse_message(e.data);
+      });
+      cb(self);
     }
-    self.websocket.onmessage = function(evt){self.process_message(evt);};
+    
+      function testready(){
+        if(self.websocket.readyState===1){
+          cb(self);
+        }
+        else{
+          setTimeout(testready,500);
+        }
+      }
+    
+
     
   }
   
-  Socket.prototype.process_message = function(evt){
+  Socket.prototype.process_websocket_message = function(evt){
     var obj = JSON.parse(evt.data);
+    this.trigger_callbacks(obj.key, obj.val);
+  }
+  
+  Socket.prototype.process_sse_message = function(evt){
+    var obj = JSON.parse(evt);
     this.trigger_callbacks(obj.key, obj.val);
   }
   
