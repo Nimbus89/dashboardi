@@ -16,6 +16,9 @@ PanelFactory.prototype.create = function(json){
     case "navbutton":
       panel = new NavButtonPanel(json, this.app, this.gridster);
       break;
+    case "gaugepanel":
+      panel = new GaugePanel(json, this.socket, this.gridster);
+      break;
     default:
       alert("Unknown panel type: " + json.type);
   }

@@ -2,24 +2,12 @@ class SseController < ApplicationController
   include ActionController::Live
   
   def random
-    
-    10.times {
+    response.headers['Content-Type'] = 'text/event-stream'
       randomNum = rand(10000);
       sendMessage "key1", randomNum.to_s, "update" 
       puts randomNum.to_s
-      sleep 1
-    }
 
   
-  ensure
-    response.stream.close
-  end
-  
-  def test
-    3.times do |n|
-      response.stream.write "#{n}...\n\n"
-      sleep 2
-    end
   ensure
     response.stream.close
   end

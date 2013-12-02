@@ -1,15 +1,18 @@
+body {
+  background-color: gray;
+}
+
 .gridster {
   top:0;
   bottom:0;
   right:0;
   left:0;
-  background-color: black;
   span {
-    background-color: gray;
+    background-color: white;
   }
   
   .valuePanel {
-    color: white;
+    color: black;
     text-align: center;
     .title{font-size:200%;}
     .unit{font-size:70%;}

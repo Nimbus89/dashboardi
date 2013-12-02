@@ -3,6 +3,10 @@
 //= require backbone
 //= require gridster
 //= require handlebars
+
+//= require raphael
+//= require justgauge
+
 //= require_tree ./templates
 //= require_tree ./visualisation
 
