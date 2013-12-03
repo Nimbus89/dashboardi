@@ -3,7 +3,7 @@
     
         this.gridster = $(".gridster").gridster({
       widget_margins: [10, 10],
-      widget_base_dimensions: [50, 50]
+      widget_base_dimensions: [80, 80]
     }).data('gridster');
     
     this.gridster.disable();
