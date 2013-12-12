@@ -4,7 +4,7 @@
     self.subscriptions = {};
     
     if(self.protocol === "websocket"){
-      self.websocket = new WebSocket(http, "visu-protocol");
+      self.websocket = new WebSocket(http);
       setTimeout(testready,500);
       self.websocket.onmessage = function(evt){self.process_websocket_message(evt);};
       

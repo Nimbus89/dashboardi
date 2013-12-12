@@ -3,6 +3,8 @@ OpenVisu::Application.routes.draw do
   get "sse/random"
   get "sse/test"
 
+  get "websocket/rand3"
+
   get "visualisation/example"
   root to: 'application#welcome'
   
