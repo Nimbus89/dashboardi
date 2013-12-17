@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @page.name %>
+</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.panels.each do |panel| %>
+      <tr>
+      	<td><%= panel.x %></td>
+      	<td><%= panel.y %></td>
+      	<td><%= panel.panel_type.name %></td>
+        <td><%= link_to 'Show', panel %></td>
+        <td><%= link_to 'Edit', edit_panel_path(panel) %></td>
+        <td><%= link_to 'Destroy', panel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_tag new_panel_path, method: :get do %>
+	<%= select_tag :panel_type_id, options_from_collection_for_select(PanelType.all, :id, :name) %>
+	<%= hidden_field_tag :page_id, @page.id %>
+	<%= submit_tag "New Panel", name: nil %>
+<% end %>
+
+
+<%= link_to 'Back', @page.project %>

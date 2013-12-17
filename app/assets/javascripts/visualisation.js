@@ -6,6 +6,8 @@
 
 //= require raphael
 //= require justgauge
+//= require jquery.flot
+
 
 //= require_tree ./templates
 //= require_tree ./visualisation

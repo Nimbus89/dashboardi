@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/open_visu
-//= require_tree .
+//= require projects
+
+

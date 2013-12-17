@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020153959) do
+ActiveRecord::Schema.define(version: 20131216191023) do
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "panel_fields", force: true do |t|
+    t.string   "name"
+    t.string   "field_type"
+    t.integer  "panel_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "panel_fields", ["panel_type_id"], name: "index_panel_fields_on_panel_type_id"
+
+  create_table "panel_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "panels", force: true do |t|
+    t.string   "x"
+    t.string   "y"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "panel_type_id"
+    t.text     "properties"
+  end
+
+  add_index "panels", ["page_id"], name: "index_panels_on_page_id"
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -22,6 +57,25 @@ ActiveRecord::Schema.define(version: 20131020153959) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "properties", force: true do |t|
+    t.string   "value"
+    t.integer  "panel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "properties", ["panel_id"], name: "index_properties_on_panel_id"
+
+  create_table "property_types", force: true do |t|
+    t.string   "name"
+    t.string   "value_type"
+    t.integer  "panel_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

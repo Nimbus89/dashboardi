@@ -20,5 +20,14 @@
   <%= @project.description %>
 </p>
 
+<ol>
+<% @project.pages.each do |page| %>
+	<li>
+		<%= page.name %> 
+		<%= link_to "Edit", page %>
+	</li>
+<% end %>
+</ol>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

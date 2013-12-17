@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>Page: <%= @panel.page.name %></p>
+
+<p>X: <%= @panel.x %></p>
+
+<p>Y: <%= @panel.y %></p>
+
+
+<%= link_to 'Edit', edit_panel_path(@panel) %> |
+<%= link_to 'Back', @panel.page %>

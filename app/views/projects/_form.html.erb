@@ -19,6 +19,12 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <%= f.fields_for :pages do |builder| %>
+    <%= render 'page_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Page", f, :pages %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

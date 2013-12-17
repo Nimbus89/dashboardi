@@ -19,6 +19,9 @@ PanelFactory.prototype.create = function(json){
     case "gaugepanel":
       panel = new GaugePanel(json, this.socket, this.gridster);
       break;
+    case "timeseries" :
+      panel = new TimeSeriesPanel(json, this.socket, this.gridster);
+      break;
     default:
       alert("Unknown panel type: " + json.type);
   }

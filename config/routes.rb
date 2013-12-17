@@ -1,5 +1,13 @@
 OpenVisu::Application.routes.draw do
 
+  
+
+  get "page/index"
+  get "page/edit"
+  get "page/new"
+  get "page/show"
+  resources :panel_types
+
   get "sse/random"
   get "sse/test"
 
@@ -10,7 +18,11 @@ OpenVisu::Application.routes.draw do
   
   devise_for :users
   
-    resources :projects
+  resources :projects
+
+  resources :pages
+
+  resources :panels
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

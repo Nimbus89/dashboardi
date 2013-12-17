@@ -3,9 +3,7 @@ class ProjectsController < ApplicationController
 
 
 
-  before_filter do
-    :authenticate_user!
-  end
+  before_filter :authenticate_user!
   
   before_filter :check_user, only: [:show, :edit, :update, :delete]
   # GET /projects
@@ -82,6 +80,10 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :date_created, :last_modified, :description, :user_id)
+      params.require(:project).permit(:name, :date_created, :last_modified, :description, :user_id, pages_attributes: [
+        :id, :name, :_destroy, panels_attributes:[
+          :id, :_destroy, :x, :y, :properties
+        ]
+      ])
     end
 end
