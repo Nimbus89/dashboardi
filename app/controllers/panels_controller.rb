@@ -41,6 +41,7 @@ class PanelsController < ApplicationController
   # PATCH/PUT /panels/1.json
   def update
     respond_to do |format|
+      puts "\nPanel Params:" + panel_params.to_s + "\n"
       if @panel.update(panel_params)
         format.html { redirect_to @panel, notice: 'Panel was successfully updated.' }
         format.json { head :no_content }
@@ -54,9 +55,10 @@ class PanelsController < ApplicationController
   # DELETE /panels/1
   # DELETE /panels/1.json
   def destroy
+    topage = @panel.page
     @panel.destroy
     respond_to do |format|
-      format.html { redirect_to panels_url }
+      format.html { redirect_to topage }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,8 @@ class PanelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def panel_params
-      params.require(:panel).permit(:id, :x, :y, :properties, :page_id, :panel_type_id)
+      params.require(:panel).permit(:id, :x, :y, :page_id, :panel_type_id).tap do |whitelisted|
+        whitelisted[:properties] = params[:panel][:properties]
+      end
     end
 end

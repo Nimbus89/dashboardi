@@ -6,6 +6,12 @@
 
 <p>Y: <%= @panel.y %></p>
 
+<% @panel.panel_type.panel_fields.each do |field| %>
+	<p>
+		<strong><%= field.name %>: </strong>
+		<%= @panel.properties[field.name] %>
+	</p>
+<% end %>
 
 <%= link_to 'Edit', edit_panel_path(@panel) %> |
 <%= link_to 'Back', @panel.page %>

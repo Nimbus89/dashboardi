@@ -1,13 +1,10 @@
-<h1>Listing projects</h1>
+<h1>My projects</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Date created</th>
-      <th>Last modified</th>
       <th>Description</th>
-      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,8 +15,6 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.date_created %></td>
-        <td><%= project.last_modified %></td>
         <td><%= project.description %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
