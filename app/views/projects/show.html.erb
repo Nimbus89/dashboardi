@@ -7,12 +7,22 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <strong>Protocol:</strong>
+  <%= @project.protocol %>
+</p>
+
+<p>
+  <strong>Connection Address:</strong>
+  <%= @project.connection_address %>
+</p>
+
 <h2>Pages</h2>
 <ul>
 <% @project.pages.each do |page| %>
 	<li><%= link_to page.name, page %></li>
 <% end %>
 </ul>
-
+<%= link_to 'View', visualisation_path(project_id: @project.id) %> | 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

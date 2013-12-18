@@ -20,6 +20,16 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= f.label :protocol %><br>
+    <%= f.text_field :protocol %>
+  </div>
+
+  <div class="field">
+    <%= f.label :connection_address %><br>
+    <%= f.text_field :connection_address %>
+  </div>
+
   <%= f.fields_for :pages do |builder| %>
     <%= render 'page_fields', f: builder %>
   <% end %>
