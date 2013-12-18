@@ -14,8 +14,13 @@ function TimeSeriesPanel(json, socket, gridster){
 
 	this.refreshRate = json.properties.refreshRate;
 	this.resolution = json.properties.resolution;
-	this.yMax = json.properties.yMax;
-	this.yMin = json.properties.yMin;
+	this.yMax = json.properties.ymax;
+	this.yMin = json.properties.ymin;
+
+	this.options.yaxis= {
+		min: this.yMin,
+		max: this.yMax
+	}
 
 	this.gridster = gridster;
 
@@ -63,9 +68,11 @@ TimeSeriesPanel.prototype.rerender = function(){
 
 
 TimeSeriesPanel.prototype.generatePoints = function(){
+	var lines = [];
 	var res = [];
 	for (var i = 0; i < this.data.length; i++){
 		res.push([i, this.data[i]]);
 	}
-	return res;
+	lines.push(res);
+	return lines;
 }
