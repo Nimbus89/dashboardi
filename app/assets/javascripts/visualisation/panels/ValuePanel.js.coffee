@@ -1,6 +1,6 @@
 class @ValuePanel extends @Panel
-  constructor: (json, socket, gridster) ->
-    super(json, gridster, null, socket, 'ValuePanel')
+  constructor: (json, app, socket, gridster) ->
+    super(json, gridster, app, socket, 'ValuePanel')
     @sizeX = 3
     @sizeY = 2
 

@@ -6,8 +6,8 @@ class @PanelFactory
 
   create: (json) =>
     switch json.type
-      when "value" then new window.ValuePanel(json, this.socket, this.gridster)
-      when "navbutton" then new window.NavButtonPanel(json, this.app, this.gridster)
-      when "gaugepanel" then new window.GaugePanel(json, this.socket, this.gridster)
-      when "timeseries" then new window.TimeSeriesPanel(json, this.socket, this.gridster)
+      when "value" then new window.ValuePanel(json, @app, @socket, @gridster)
+      when "navbutton" then new window.NavButtonPanel(json, @app, @socket, @gridster)
+      when "gaugepanel" then new window.GaugePanel(json, @app, @socket, @gridster)
+      when "timeseries" then new window.TimeSeriesPanel(json, @app, @socket, @gridster)
       else alert("Unknown panel type: " + json.type);

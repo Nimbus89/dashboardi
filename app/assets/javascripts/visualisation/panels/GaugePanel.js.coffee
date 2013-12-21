@@ -1,6 +1,6 @@
 class @GaugePanel extends @Panel
-  constructor: (json, socket, gridster) ->
-    super(json, gridster, null, socket, 'GaugePanel')
+  constructor: (json, app, socket, gridster) ->
+    super(json, gridster, app, socket, 'GaugePanel')
     @gauge = null
 
     @sizeX = 2
@@ -24,11 +24,3 @@ class @GaugePanel extends @Panel
 
   renderHash: =>
     {id: this.id}
-
-  generateUUID: =>
-    d = new Date().getTime()
-    'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) ->
-        r = (d + Math.random()*16)%16 | 0
-        d = Math.floor(d/16)
-        (c=='x' ? r : (r&0x7|0x8)).toString(16)
-    )

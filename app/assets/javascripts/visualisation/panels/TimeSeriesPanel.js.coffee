@@ -1,6 +1,6 @@
 class @TimeSeriesPanel extends @Panel
-	constructor: (json, socket, gridster) ->
-		super(json, gridster, null, socket, "TimeSeriesPanel")
+	constructor: (json, app, socket, gridster) ->
+		super(json, gridster, app, socket, "TimeSeriesPanel")
 		@plot = null
 		@inData = null
 		@data = []

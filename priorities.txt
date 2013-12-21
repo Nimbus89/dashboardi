@@ -1,15 +1,10 @@
-Currently Working on:======================================================
-
-
-
 Bare Minimum:==================================
 
 -Drag & Drop page editor
--Image Panel
 
 -Fix crash on disconnect
 
--Add superclass for panels
+-Update panel api to accept many-keys-one-panel
 
 High Priority:==========================================
 
