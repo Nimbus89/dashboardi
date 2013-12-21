@@ -1,15 +1,18 @@
-class @GaugePanel extends @Panel
+class @ImagePanel extends @Panel
   constructor: (json, app, socket, gridster) ->
     super(json, gridster, app, socket, 'ImagePanel')
+    @sizeX = 2
+    @sizeY = 2
     @key = 0
-    render()
+    @srcs = json.properties.srcs
+    @render()
     @socket.add_subscription(json.properties.key, this)
 
   render: =>
     super
     @gauge = new JustGage({id: @id, title: @title, min: @min, max: @max})
 
-  update: (newValue) =>
+  update: (key, newValue) =>
     if @srcs[newValue]?
       @key = newValue
     else

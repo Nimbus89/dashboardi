@@ -10,7 +10,7 @@ class @ValuePanel extends @Panel
     
     @render()
     @socket.add_subscription(json.properties.key, this)
-  update: (newValue) =>
+  update: (key, newValue) =>
     @currentValue = newValue
     @html.html(@template(@renderHash()))
   renderHash: =>

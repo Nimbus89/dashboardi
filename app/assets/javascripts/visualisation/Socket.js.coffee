@@ -35,4 +35,4 @@ class @Socket
   trigger_callbacks: (key, data) =>
     if @subscriptions[key]?
       for subscriber in @subscriptions[key]
-        subscriber.update(data)
+        subscriber.update(key, data)

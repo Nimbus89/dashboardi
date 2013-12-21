@@ -19,7 +19,7 @@ class @GaugePanel extends @Panel
     super
     @gauge = new JustGage({id: @id, title: @title, min: @min, max: @max})
 
-  update: (newValue) =>
+  update: (key, newValue) =>
     @gauge.refresh(newValue)
 
   renderHash: =>

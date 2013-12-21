@@ -27,8 +27,8 @@ class @TimeSeriesPanel extends @Panel
 			@rerender()
 		, @refreshRate
 
-	update: (newData) =>
-		@inData = newData
+	update: (key, newValue) =>
+		@inData = newValue
 
 	rerender: =>
 		newpoint = null

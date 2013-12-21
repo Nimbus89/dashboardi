@@ -10,4 +10,5 @@ class @PanelFactory
       when "navbutton" then new window.NavButtonPanel(json, @app, @socket, @gridster)
       when "gaugepanel" then new window.GaugePanel(json, @app, @socket, @gridster)
       when "timeseries" then new window.TimeSeriesPanel(json, @app, @socket, @gridster)
+      when "image" then new window.ImagePanel(json, @app, @socket, @gridster)
       else alert("Unknown panel type: " + json.type);

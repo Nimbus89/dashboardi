@@ -6,7 +6,7 @@ class SseController < ApplicationController
     20.times do
       randomNum1 = rand(10000);
       randomNum2 = rand(100);
-      randomNum3 = rand(1);
+      randomNum3 = rand(2);
       sendMessage "key1", randomNum1.to_s, "update" 
       sendMessage "key2", randomNum2.to_s, "update" 
       sendMessage "key3", randomNum3.to_s, "update" 
