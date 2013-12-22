@@ -1,9 +1,12 @@
 class @TimeSeriesPanel extends @Panel
 	constructor: (json, app, socket, gridster) ->
 		super(json, gridster, app, socket, "TimeSeriesPanel")
+		@keys = json.properties.keys
 		@plot = null
-		@inData = null
-		@data = []
+		@inDatas = []
+		@datas = []
+		for key in @keys
+			@datas[key] = [] 
 		@options = json.properties.options || {}
 		@refreshRate = json.properties.refreshRate
 		@resolution = json.properties.resolution
@@ -17,36 +20,41 @@ class @TimeSeriesPanel extends @Panel
 
 		@render()
 
-		socket.add_subscription(json.properties.key, this)
+		for key in @keys
+			socket.add_subscription(key, this)
 
 	render: =>
 		super()
-		@data.push(@yMin) while @data.length < @resolution
+		for key in @keys
+			@datas[key].push(@yMin) while @datas[key].length < @resolution 
 		@plot = $.plot($(@html), @generatePoints(), @options)
 		@interval = setInterval =>
 			@rerender()
 		, @refreshRate
 
 	update: (key, newValue) =>
-		@inData = newValue
+		@inDatas[key] = newValue
 
 	rerender: =>
-		newpoint = null
-		if @inData isnt null
-			newpoint = @inData
-			@inData = null
-		else
-			newpoint = @data[@resolution - 1]
+		
+		for key in @keys
+			newpoint = null
+			if @inDatas[key]?
+				newpoint = @inDatas[key]
+				@inDatas[key] = null
+			else
+				newpoint = @datas[key][@resolution - 1]
 
-		@data = @data.slice(1)
-		@data.push(newpoint)
+			@datas[key] = @datas[key].slice(1)
+			@datas[key].push(newpoint)
 
 		@plot.setData(@generatePoints())
 		@plot.draw()
 
 	generatePoints: =>
 		lines = []
-		res = []
-		res.push([i, point]) for point, i in @data
-		lines.push(res);
+		for key in @keys
+			res = []
+			res.push([i, point]) for point, i in @datas[key]
+			lines.push(res);
 		lines

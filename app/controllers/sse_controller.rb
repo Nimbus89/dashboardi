@@ -3,7 +3,7 @@ class SseController < ApplicationController
   
   def random
     response.headers['Content-Type'] = 'text/event-stream'
-    20.times do
+    30.times do
       randomNum1 = rand(10000);
       randomNum2 = rand(100);
       randomNum3 = rand(2);

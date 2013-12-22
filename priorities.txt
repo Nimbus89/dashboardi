@@ -1,10 +1,22 @@
 Bare Minimum:==================================
 
 -Drag & Drop page editor
+--View Pallette bases on Panel Types in rails
+--Drag Pallette items
+--Drop palletteitems onto workspace
+--Update Page model based on this
+--Have worspace view represent page model
+--Be able to have a selected panel
+--Be able to show properties of selected panel
+--Be able to edit properties of selected panel
+--Collection PanelTypes of model PanelType
+--Model Page (has collection Panels of Model Panel?)
+--Model Panel
+--Pallette view, Workspace view, Properties View
 
--Fix crash on disconnect
+--Ability to change page/project on the fly
 
--Update panel api to accept many-keys-one-panel
+-Fix crash on disconnect (websocket/tubesock)
 
 High Priority:==========================================
 
