@@ -2,6 +2,7 @@ OpenVisu::Application.routes.draw do
 
   
 
+  get "editor/:page_id", to: "editor#show"
   get "page/index"
   get "page/edit"
   get "page/new"

@@ -1,0 +1,17 @@
+<div class="workspace">
+	<% @page.panels.each do |panel| %>
+		<%= render_workspace_panel panel %>
+	<% end %>
+</div>
+
+<div class="properties">
+
+</div>
+
+<div class="palette">
+	<ul>
+	<% @palette.each do |pitem| %>
+	  <li><%= render_palette_item pitem %></li>
+	<% end %>
+	</ul>
+</div>

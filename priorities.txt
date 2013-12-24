@@ -1,5 +1,4 @@
-Bare Minimum:==================================
-
+Current Work:==============================================
 -Drag & Drop page editor
 --View Pallette bases on Panel Types in rails
 --Drag Pallette items
@@ -14,6 +13,15 @@ Bare Minimum:==================================
 --Model Panel
 --Pallette view, Workspace view, Properties View
 
+Add PanelTypes to migration
+
+Add panel size to panel types
+
+
+Bare Minimum:==================================
+
+
+-Drag & Drop page editor
 --Ability to change page/project on the fly
 
 -Fix crash on disconnect (websocket/tubesock)
