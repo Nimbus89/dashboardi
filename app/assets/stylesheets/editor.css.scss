@@ -1,3 +1,40 @@
 // Place all the styles related to the editor controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$properties-height: 100px;
+$palette-width: 100px;
+
+.workspace {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: $properties-height;
+	right: $palette-width;
+	background-color: green;
+
+
+	.value {
+		width: 260px;
+		height: 170px;
+		background-color: white;
+	}
+}
+
+.properties {
+	background-color: red;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: $palette-width;
+	height: $properties-height;
+}
+
+.palette{
+	background-color: blue;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: $palette-width;
+	bottom: 0;
+}

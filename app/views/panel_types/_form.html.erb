@@ -16,6 +16,16 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.label :sizey %><br>
+    <%= f.text_field :sizey %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sizex %><br>
+    <%= f.text_field :sizex %>
+  </div>
+
   <%= f.fields_for :panel_fields do |builder| %>
     <%= render 'panel_field_fields', f: builder %>
   <% end %>

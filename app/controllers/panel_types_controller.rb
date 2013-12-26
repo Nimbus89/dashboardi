@@ -69,6 +69,6 @@ class PanelTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def panel_type_params
-      params.require(:panel_type).permit(:name, panel_fields_attributes: [:field_type, :name, :_destroy, :id])
+      params.require(:panel_type).permit(:name, :sizex, :sizey, panel_fields_attributes: [:field_type, :name, :_destroy, :id])
     end
 end

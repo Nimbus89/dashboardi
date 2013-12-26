@@ -21,6 +21,8 @@ Add panel size to panel types
 Bare Minimum:==================================
 
 
+-target screen size + position options(stretch, corner, center, etc)
+
 -Drag & Drop page editor
 --Ability to change page/project on the fly
 
