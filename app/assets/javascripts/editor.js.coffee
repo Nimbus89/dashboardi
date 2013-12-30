@@ -10,5 +10,5 @@
 
 
 jQuery(($) -> 
-	app = new ApplicationController()
+	window.app = new ApplicationController()
 )

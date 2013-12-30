@@ -1,4 +1,4 @@
-<div class="workspace">
+<div class="workspace" data-pageID="<%= @page.id %>">
 	<% @page.panels.each do |panel| %>
 		<%= render_workspace_panel panel %>
 	<% end %>
@@ -11,7 +11,7 @@
 <div class="palette">
 	<ul>
 	<% @palette.each do |pitem| %>
-	  <li><%= render_palette_item pitem %></li>
+	  <li class="paletteItem" data-paneltype="<%= pitem.id %>"><%= render_palette_item pitem %></li>
 	<% end %>
 	</ul>
 </div>

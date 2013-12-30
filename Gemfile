@@ -51,8 +51,6 @@ gem 'rails-backbone'
 
 gem 'handlebars_assets'
 
-gem 'websocket-rails'
-
 gem 'rails_12factor', group: :production
 
 gem 'puma'

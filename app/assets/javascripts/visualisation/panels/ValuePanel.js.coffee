@@ -14,4 +14,4 @@ class @ValuePanel extends @Panel
     @currentValue = newValue
     @html.html(@template(@renderHash()))
   renderHash: =>
-    {value:this.currentValue, title:this.title, unit:this.unit}
+    @mergeHashes super(), {value:this.currentValue, title:this.title, unit:this.unit}

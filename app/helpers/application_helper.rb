@@ -8,6 +8,13 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+	def render_palette_item(item)
+		render partial: "/editor/palette_items/#{item.name}"
+	end
+
+	def render_workspace_panel(item)
+		render partial: "/editor/panel", locals: {panel: item}
+	end
 
 end
 

@@ -20,6 +20,7 @@ Add panel size to panel types
 
 Bare Minimum:==================================
 
+-http://sourceforge.net/projects/jquidragcollide/
 
 -target screen size + position options(stretch, corner, center, etc)
 

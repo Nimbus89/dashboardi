@@ -29,7 +29,7 @@ class PanelsController < ApplicationController
     respond_to do |format|
       if @panel.save
         format.html { redirect_to @panel, notice: 'Panel was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @panel }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @panel.errors, status: :unprocessable_entity }

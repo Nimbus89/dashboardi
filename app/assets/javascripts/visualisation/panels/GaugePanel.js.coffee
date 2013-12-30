@@ -23,4 +23,4 @@ class @GaugePanel extends @Panel
     @gauge.refresh(newValue)
 
   renderHash: =>
-    {id: this.id}
+    @mergeHashes super(), {id: @id}

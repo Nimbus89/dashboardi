@@ -1,23 +1,44 @@
 class @ApplicationController
 	constructor: ->
-		#@gridster = $(".workspace").gridster({
-		#	widget_margins: [10, 10],
-		#	widget_base_dimensions: [80, 80],
-		#	widget_selector: "div"
-		#})
+		@pageID = $(".workspace").data("pageid")
+
+		@bind_panel_move()
+
+		@bind_palette_drop()
+	edit_panel: (panel_id, info_hash) =>
+		$.ajax({
+			type: "PATCH",
+			url: '/panels/' + panel_id + '.json',
+			data: JSON.stringify(info_hash),
+			contentType: 'application/json',
+			dataType: 'json',
+			success: (msg) ->
+				console.log msg
+		})
+	new_panel: (info_hash) =>
+		$.ajax({
+			type: "POST",
+			url: '/panels/',
+			data: JSON.stringify(info_hash),
+			contentType: 'application/json',
+			dataType: 'script',
+			success: (msg) ->
+				console.log msg
+		})
+	bind_panel_move: =>
+		self = this
 		$(".workspace .panel").draggable({ grid: [20,20], containment: "parent" })
 		$(".workspace .panel").on("dragstop", (event, ui) ->
 			id = $(this).data("panelid")
 			panel_info = { panel : {x: ui.position.left, y: ui.position.top} }
-			
-
-			$.ajax({
-				type: "PATCH",
-				url: '/panels/' + id+ '.json',
-				data: JSON.stringify(panel_info),
-				contentType: 'application/json',
-				dataType: 'json',
-				success: (msg) ->
-					console.log msg
-			})
+			self.edit_panel(id, panel_info)
+		)
+	bind_palette_drop: =>
+		$(".palette .paletteItem").draggable({ helper: "clone" })
+		$(".workspace").droppable({ accept: ".paletteItem" })
+		$(".workspace").on("drop", (event, ui) =>
+			panel_type_id = ui.draggable[0].dataset.paneltype
+			x = ui.offset.left - (ui.offset.left % 20) 
+			y = ui.offset.top - (ui.offset.top % 20) 
+			@new_panel({ panel: { x: x, y: y, panel_type_id: panel_type_id, page_id: @pageID } })
 		)
