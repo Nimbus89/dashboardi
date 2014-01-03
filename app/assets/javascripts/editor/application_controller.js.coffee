@@ -5,6 +5,8 @@ class @ApplicationController
 		@bind_panel_move()
 
 		@bind_palette_drop()
+
+		@prop_cont = new PropertiesController();
 	edit_panel: (panel_id, info_hash) =>
 		$.ajax({
 			type: "PATCH",
@@ -33,6 +35,10 @@ class @ApplicationController
 			panel_info = { panel : {x: ui.position.left, y: ui.position.top} }
 			self.edit_panel(id, panel_info)
 		)
+		$(".workspace .panel").on("click", (event, ui) ->
+			id = $(this).data("panelid")
+			self.select_panel(id)
+		)
 	bind_palette_drop: =>
 		$(".palette .paletteItem").draggable({ helper: "clone" })
 		$(".workspace").droppable({ accept: ".paletteItem" })
@@ -42,3 +48,13 @@ class @ApplicationController
 			y = ui.offset.top - (ui.offset.top % 20) 
 			@new_panel({ panel: { x: x, y: y, panel_type_id: panel_type_id, page_id: @pageID } })
 		)
+	select_panel: (panel_id) =>
+		$.ajax({
+			type: "GET",
+			url: '/panels/' + panel_id,
+			data: {},
+			contentType: 'application/json',
+			dataType: 'script',
+			success: (msg) ->
+				console.log msg
+		})

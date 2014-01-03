@@ -23,6 +23,6 @@ class @Panel
 		    (c=='x' ? r : (r&0x7|0x8)).toString(16)
 		)
 	mergeHashes: (hash1, hash2) =>
-		for item, key in hash2
+		for key, item of hash2
 			hash1[key] = item
 		hash1

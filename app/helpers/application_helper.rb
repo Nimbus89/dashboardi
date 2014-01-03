@@ -16,5 +16,9 @@ module ApplicationHelper
 		render partial: "/editor/panel", locals: {panel: item}
 	end
 
+  def render_properties_pane(panel)
+    render partial: "/editor/properties_pane", locals: {panel: panel}
+  end
+
 end
 

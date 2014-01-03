@@ -10,6 +10,10 @@ class PanelsController < ApplicationController
   # GET /panels/1
   # GET /panels/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /panels/new
