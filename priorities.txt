@@ -8,13 +8,14 @@ Current Work:==============================================
 --Additional property fields
 --Styling
 --Fix panel collision (http://sourceforge.net/projects/jquidragcollide/)
-
+--Properties pane submit on blur
 
 
 
 Bare Minimum:==================================
 
 -Eager Loading
+--Miniprofiler
 
 -target screen size + position options(stretch, corner, center, etc)
 

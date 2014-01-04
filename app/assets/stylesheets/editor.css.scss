@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$properties-height: 100px;
+$properties-height: 200px;
 $palette-width: 100px;
 
 .workspace {
@@ -14,9 +14,7 @@ $palette-width: 100px;
 	background-color: green;
 
 
-	.value {
-		width: 260px;
-		height: 170px;
+	.panel {
 		background-color: white;
 	}
 }

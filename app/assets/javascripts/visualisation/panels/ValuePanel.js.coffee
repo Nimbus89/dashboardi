@@ -1,8 +1,6 @@
 class @ValuePanel extends @Panel
   constructor: (json, app, socket) ->
     super(json, app, socket, 'ValuePanel')
-    @sizeX = 260
-    @sizeY = 170
 
     @title = json.properties.title
     @unit = json.properties.unit

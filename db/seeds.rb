@@ -6,22 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-valuepanel = PanelType.create( name: "value", sizex: 3, sizey: 2 )
+valuepanel = PanelType.create( name: "value", sizex: 240, sizey: 160 )
 PanelField.create( name: "title", field_type: "text_field", panel_type: valuepanel)
 PanelField.create( name: "unit", field_type: "text_field", panel_type: valuepanel)
 PanelField.create( name: "key", field_type: "text_field", panel_type: valuepanel)
 
-gaugepanel = PanelType.create( name: "gaugepanel", sizex: 2, sizey: 2 )
+gaugepanel = PanelType.create( name: "gaugepanel", sizex: 160, sizey: 160 )
 PanelField.create( name: "title", field_type: "text_field", panel_type: gaugepanel)
 PanelField.create( name: "key", field_type: "text_field", panel_type: gaugepanel)
 PanelField.create( name: "min", field_type: "text_field", panel_type: gaugepanel)
 PanelField.create( name: "max", field_type: "text_field", panel_type: gaugepanel)
 
-navbutton = PanelType.create( name: "navbutton", sizex: 3, sizey: 2 )
+navbutton = PanelType.create( name: "navbutton", sizex: 160, sizey: 80 )
 PanelField.create( name: "navagate_to", field_type: "text_field", panel_type: navbutton)
 PanelField.create( name: "link_text", field_type: "text_field", panel_type: navbutton)
 
-timeseries = PanelType.create( name: "timeseries", sizex: 7, sizey: 5 )
+timeseries = PanelType.create( name: "timeseries", sizex: 560, sizey: 320 )
 PanelField.create( name: "ymax", field_type: "text_field", panel_type: timeseries)
 PanelField.create( name: "ymin", field_type: "text_field", panel_type: timeseries)
 PanelField.create( name: "resolution", field_type: "text_field", panel_type: timeseries)

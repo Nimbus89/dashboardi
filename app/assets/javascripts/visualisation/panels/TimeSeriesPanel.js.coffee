@@ -1,7 +1,7 @@
 class @TimeSeriesPanel extends @Panel
 	constructor: (json, app, socket) ->
 		super(json, app, socket, "TimeSeriesPanel")
-		@keys = json.properties.keys
+		@keys = json.properties.keys || []
 		@plot = null
 		@inDatas = []
 		@datas = []
@@ -12,9 +12,6 @@ class @TimeSeriesPanel extends @Panel
 		@resolution = json.properties.resolution
 		@yMax = json.properties.ymax
 		@yMin = json.properties.ymin
-
-		@sizeX = 5
-		@sizeY = 3
 
 		@options.yaxis = {min: @yMin, max: @yMax}
 

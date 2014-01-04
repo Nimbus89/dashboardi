@@ -1,8 +1,6 @@
 class @NavButtonPanel extends @Panel
   constructor: (json, app, socket) ->
     super(json, app, socket, "NavButtonPanel")
-    @sizeX = 3
-    @sizeY = 2
     @text = json.properties.link_text
     @ref = json.properties.navagate_to
 
@@ -15,4 +13,4 @@ class @NavButtonPanel extends @Panel
     );
 
   renderHash: =>
-    {text: this.text}
+    @mergeHashes super(), {text: this.text}

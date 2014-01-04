@@ -8,6 +8,13 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+  def link_to_add_fields_dyn(f, association, partial)
+    fields = f.fields_for association do |builder|
+      render partial, f: builder, value: ""
+    end
+    link_to("Add "+ association.singularize, '#', class: "add_fields_dyn", data: { fields: fields.gsub("\n", "")})
+  end
+
 	def render_palette_item(item)
 		render partial: "/editor/palette_items/#{item.name}"
 	end

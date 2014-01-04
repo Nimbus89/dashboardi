@@ -7,6 +7,9 @@ class @Panel
 
 		@x = json.x
 		@y = json.y
+		@sizeX = json.sizeX
+		@sizeY = json.sizeY
+
 
 		@template = HandlebarsTemplates[templateName]
 	render: =>

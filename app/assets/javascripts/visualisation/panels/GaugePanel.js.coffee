@@ -3,9 +3,6 @@ class @GaugePanel extends @Panel
     super(json, app, socket, 'GaugePanel')
     @gauge = null
 
-    @sizeX = 2
-    @sizeY = 2
-
     @title = json.properties.title || "Title"
     @min = json.properties.min || 0
     @max = json.properties.max || 100
