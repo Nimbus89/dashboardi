@@ -1,6 +1,6 @@
 class @GaugePanel extends @Panel
-  constructor: (json, app, socket, gridster) ->
-    super(json, gridster, app, socket, 'GaugePanel')
+  constructor: (json, app, socket) ->
+    super(json, app, socket, 'GaugePanel')
     @gauge = null
 
     @sizeX = 2

@@ -1,12 +1,7 @@
 class @ApplicationController
   constructor: (socket) ->
     @socket = socket
-    @gridster = $(".gridster").gridster({
-      widget_margins: [10, 10],
-      widget_base_dimensions: [80, 80]
-    }).data('gridster')
-    @gridster.disable()
-    @panelFactory = new window.PanelFactory(@gridster, @socket, this)
+    @panelFactory = new window.PanelFactory(@socket, this)
     @changePage(0)
 
   displayCurrentPage: =>
@@ -14,5 +9,5 @@ class @ApplicationController
 
   changePage: (pageNum) =>
     @currentPage = window.project.pages[pageNum]
-    @gridster.remove_all_widgets()
+    $(".page").html("")
     @displayCurrentPage()

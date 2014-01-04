@@ -1,6 +1,6 @@
 class @ValuePanel extends @Panel
-  constructor: (json, app, socket, gridster) ->
-    super(json, gridster, app, socket, 'ValuePanel')
+  constructor: (json, app, socket) ->
+    super(json, app, socket, 'ValuePanel')
     @sizeX = 260
     @sizeY = 170
 
@@ -12,6 +12,8 @@ class @ValuePanel extends @Panel
     @socket.add_subscription(json.properties.key, this)
   update: (key, newValue) =>
     @currentValue = newValue
-    @html.html(@template(@renderHash()))
+    newHtml = $(@template(@renderHash()))
+    @html.replaceWith(newHtml)
+    @html = newHtml
   renderHash: =>
     @mergeHashes super(), {value:this.currentValue, title:this.title, unit:this.unit}

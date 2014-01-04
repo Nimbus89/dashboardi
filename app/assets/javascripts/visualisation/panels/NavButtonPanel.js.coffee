@@ -1,6 +1,6 @@
 class @NavButtonPanel extends @Panel
-  constructor: (json, app, socket, gridster) ->
-    super(json, gridster, app, socket, "NavButtonPanel")
+  constructor: (json, app, socket) ->
+    super(json, app, socket, "NavButtonPanel")
     @sizeX = 3
     @sizeY = 2
     @text = json.properties.link_text

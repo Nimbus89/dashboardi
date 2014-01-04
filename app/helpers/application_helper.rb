@@ -20,5 +20,9 @@ module ApplicationHelper
     render partial: "/editor/properties_pane", locals: {panel: panel}
   end
 
+  def editor_path(page)
+    "/editor/" + page.id.to_s
+  end
+
 end
 

@@ -1,6 +1,6 @@
 class @ImagePanel extends @Panel
-  constructor: (json, app, socket, gridster) ->
-    super(json, gridster, app, socket, 'ImagePanel')
+  constructor: (json, app, socket) ->
+    super(json, app, socket, 'ImagePanel')
     @sizeX = 2
     @sizeY = 2
     @key = 0

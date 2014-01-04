@@ -20,9 +20,8 @@
 <h2>Pages</h2>
 <ul>
 <% @project.pages.each do |page| %>
-	<li><%= link_to page.name, page %></li>
+	<li><%= link_to page.name, page %> | <%= link_to "Open in Editor", editor_path(page) %></li>
 <% end %>
 </ul>
-<%= link_to 'View', visualisation_path(project_id: @project.id) %> | 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Run', visualisation_path(project_id: @project.id) %> | 
+<%= link_to 'Edit Details', edit_project_path(@project) %>
