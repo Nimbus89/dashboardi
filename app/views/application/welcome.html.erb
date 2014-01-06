@@ -1,1 +1,44 @@
-<h1>This is the welcome page</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Display streaming data. Fast.</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <% if user_signed_in? %>
+    	<p><%= link_to 'Your Projects »', projects_path, class: "btn btn-primary btn-lg" %></p>
+    <% else %>
+    	<p><%= link_to "Sign up Now »", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="section-tout">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "file-o" %> Easy to Use</h3>
+            <p>Modern jquery-driven drag &amp; drop editor. Gets you up and running with no effort.</p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "github" %> Open Source</h3>
+            <p>Made with open source plugins and gems, with the source available on github.</p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "wrench" %> Multi-source</h3>
+            <p>The ability to use many sources of data in one dashboard. Hooks into your program easily.</p>  
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "cogs" %> For Developers</h3>
+             <p>Easily allows a developer to put together a dashboard for displaying their program's information or analytics.</p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "cloud" %> Student Project</h3>
+            <p>Built as a final year project for <%= link_to "UCC Computer Science", "http://www.ucc.ie/en/compsci/" %>.</p>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <h3><%= fa_icon "bullhorn" %> Work in Progress</h3>
+            <p>Dashboardi is constantly updating to add new features, panels, and ways of getting at your data.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>

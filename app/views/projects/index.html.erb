@@ -1,13 +1,11 @@
-<h1>My projects</h1>
+<h1>My Projects</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -16,10 +14,10 @@
       <tr>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
-        <td><%= link_to 'Run', visualisation_path(project_id: project.id) %></td>
-        <td><%= link_to 'Open', project %></td>
-        <td><%= link_to 'Edit Details', edit_project_path(project) %></td>
-        <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Run', visualisation_path(project_id: project.id), class: "btn btn-success" %>
+        <%= link_to 'Open', project, class: "btn btn-info" %>
+        <%= link_to 'Edit Details', edit_project_path(project) %>
+        <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>

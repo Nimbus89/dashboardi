@@ -56,3 +56,9 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 
 gem'tubesock'
+
+gem 'bootstrap-sass'
+
+gem "font-awesome-rails"
+
+gem 'best_in_place'

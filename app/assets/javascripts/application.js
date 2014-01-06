@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
+//= require best_in_place
 //= require projects
+
 
 
