@@ -4,24 +4,46 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @project.description %>
+  <%= best_in_place @project, :description %>
 </p>
 
 <p>
   <strong>Protocol:</strong>
-  <%= @project.protocol %>
+  <%= best_in_place @project, :protocol %>
 </p>
 
 <p>
   <strong>Connection Address:</strong>
-  <%= @project.connection_address %>
+  <%= best_in_place @project, :connection_address %>
 </p>
 
 <h2>Pages</h2>
-<ul>
-<% @project.pages.each do |page| %>
-	<li><%= link_to page.name, page %> | <%= link_to "Open in Editor", editor_path(page) %></li>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Panels</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<% @project.pages.each do |page| %>
+		<tr>
+			<td><%= best_in_place page, :name %></td>
+			<td><%= page.panels.size %></td>
+      <td><%= link_to 'Run Page', visualisation_path( @project, page_id: page.id ), class: "btn btn-success" %></td>
+			<td><%= link_to "Edit", editor_path(page), class: "btn btn-info" %></td>
+			<td><%= link_to 'Delete', page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+		</tr>
+	<% end %>
+  </tbody>
+
+</table>
+<%= form_for @new_page do |f| %>
+	<%= f.hidden_field :name %>
+	<%= f.hidden_field :project_id %>
+	<%= f.submit "New Page", class: "btn btn-primary" %>
 <% end %>
-</ul>
-<%= link_to 'Run', visualisation_path(project_id: @project.id) %> | 
-<%= link_to 'Edit Details', edit_project_path(@project) %>
+

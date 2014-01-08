@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @new_page = Page.new({project: @project, name: "New Page"})
   end
 
   # GET /projects/new

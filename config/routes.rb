@@ -15,7 +15,8 @@ OpenVisu::Application.routes.draw do
   get "websocket/rand3"
 
   get "visualisation/example"
-  get "visualisation", to: "visualisation#show"
+  get "visualisation/:project_id", to: "visualisation#show"
+  get "visualisation/:project_id/:page_id", to: "visualisation#show"
   root to: 'application#welcome'
   
   devise_for :users
