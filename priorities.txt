@@ -14,13 +14,7 @@ Current Work:==============================================
 
 Bare Minimum:==================================
 
--Eager Loading
---Miniprofiler
-
 -target screen size + position options(stretch, corner, center, etc)
-
--Drag & Drop page editor
---Ability to change page/project on the fly
 
 -Fix crash on disconnect (websocket/tubesock)
 
@@ -34,6 +28,9 @@ High Priority:==========================================
 
 -Static non-user-specific link to view visualisation
 -Ability to make visualisations public/private
+
+-Eager Loading
+--Miniprofiler
 
 -Some user styling options (Basic color picking)
 -Additional Program styling

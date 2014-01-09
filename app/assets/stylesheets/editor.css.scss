@@ -11,11 +11,16 @@ $palette-width: 100px;
 	left: 0;
 	bottom: $properties-height;
 	right: $palette-width;
-	background-color: green;
-
+	overflow: auto;
+	background-color: lightgreen;
 
 	.panel {
 		background-color: white;
+	}
+
+	.workspace-inner {
+
+		background-color: green;
 	}
 }
 

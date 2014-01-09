@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @new_page = Page.new({project: @project, name: "New Page"})
+    @pages_list = @project.pages.map {|i| [i.id, i.name]}
   end
 
   # GET /projects/new
@@ -49,8 +50,10 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
+      puts "DEBUG ================================="
+      puts project_params
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -81,10 +84,14 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :date_created, :last_modified, :description, :protocol, :connection_address, :user_id, pages_attributes: [
+      params.require(:project).permit(:name, :date_created, :startpage_id, :last_modified, :description, :protocol, :connection_address, :screensize_x, :screensize_y, :user_id, pages_attributes: [
         :id, :name, :_destroy, panels_attributes:[
           :id, :_destroy, :x, :y, :properties
         ]
       ])
+    end
+
+    def bip_format_collection( pages )
+      pages.map {|i| [i.id, i.name]}
     end
 end

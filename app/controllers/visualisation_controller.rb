@@ -8,8 +8,15 @@ class VisualisationController < ApplicationController
   def show
   	@project = Project.find(params[:project_id])
 
-    startpage = params[:page_id] || 0
-    @project_json = render_to_string( "project", locals: {project: @project, startpage: startpage}, layout: false)
+    if params.has_key? :page_id
+      @startpage_id = params[:page_id]
+    elsif (@project.panels.find_by id: @project.startpage) != nil
+      @startpage_id = @project.startpage.id
+    else
+      @startpage_id = @project.panels.take.id
+    end
+
+    @project_json = render_to_string( "project", locals: {project: @project}, layout: false)
   end
 
     def with_format(format, &block)

@@ -17,12 +17,29 @@
   <%= best_in_place @project, :connection_address %>
 </p>
 
+<p>
+  <strong>Target Screen Size</strong>
+  <%= best_in_place @project, :screensize_x %> x <%= best_in_place @project, :screensize_y %>
+</p>
+
+<p>
+  <strong>Connection Address:</strong>
+  <%= best_in_place @project, :connection_address %>
+</p>
+
+<p>
+  <strong>Default Start Page: </strong>
+  <%= @project.startpage.name %>
+</p>
+
 <h2>Pages</h2>
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Panels</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -35,6 +52,12 @@
 			<td><%= page.panels.size %></td>
       <td><%= link_to 'Run Page', visualisation_path( @project, page_id: page.id ), class: "btn btn-success" %></td>
 			<td><%= link_to "Edit", editor_path(page), class: "btn btn-info" %></td>
+      <td>
+      <%= form_for @project do |f| %>
+        <%= f.hidden_field :startpage_id, value: page.id %>
+        <%= f.submit "Make Default", class: "btn btn-primary" %>
+      <% end %>
+      </td>
 			<td><%= link_to 'Delete', page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
 		</tr>
 	<% end %>

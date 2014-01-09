@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223193400) do
+ActiveRecord::Schema.define(version: 20140109120139) do
 
   create_table "pages", force: true do |t|
     t.string   "name"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 20131223193400) do
     t.datetime "updated_at"
     t.string   "protocol"
     t.string   "connection_address"
+    t.integer  "startpage_id"
+    t.integer  "screensize_x"
+    t.integer  "screensize_y"
   end
 
   create_table "properties", force: true do |t|
