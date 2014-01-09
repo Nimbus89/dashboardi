@@ -13,6 +13,8 @@ class @Socket
         @process_sse_message(e.data)
       )
       cb(this)
+    else
+      cb(this)
   
   testready: =>
     if @websocket.readyState is 1 then cb(this) else setTimeout(testready, 500)
