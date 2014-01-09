@@ -26,4 +26,4 @@ PanelField.create( name: "ymax", field_type: "text_field", panel_type: timeserie
 PanelField.create( name: "ymin", field_type: "text_field", panel_type: timeseries)
 PanelField.create( name: "resolution", field_type: "text_field", panel_type: timeseries)
 PanelField.create( name: "refreshRate", field_type: "text_field", panel_type: timeseries)
-PanelField.create( name: "keys", field_type: "text_field", panel_type: timeseries)
+PanelField.create( name: "keys", field_type: "string_array", panel_type: timeseries)
