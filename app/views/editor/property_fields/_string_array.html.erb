@@ -1,8 +1,8 @@
 <fieldset>
 <%= f.label field.name %>
 <%= f.fields_for field.name do |builder| %>
-	<% if properties[field.name] != nil %>
-		<% properties[field.name].each do |value, index| %>
+	<% if panel.properties[field.name] != nil %>
+		<% panel.properties[field.name].each do |value, index| %>
 			<span class="dyn_field">
 			<%= builder.text_field "", value: value %> 
 			<%= link_to "remove", '#', class: "remove_fields_dyn" %> | 

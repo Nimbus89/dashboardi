@@ -4,6 +4,11 @@
 
 $properties-height: 200px;
 $palette-width: 100px;
+$header-height: 40px;
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 .workspace {
 	position: fixed;
@@ -24,13 +29,29 @@ $palette-width: 100px;
 	}
 }
 
+.header {
+  background-image: -webkit-linear-gradient(90deg, #2c2a29 0%, #32302f 100%);
+  border-bottom: 1px solid #111010;
+  height: $header-height;
+  line-height: $header-height;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  text-shadow: 0 -1px 0 #1e1d1c;
+  padding-left: 10px;
+}
+
 .properties {
-	background-color: red;
+	background-color: #5A5A5A;
+	color: white;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: $palette-width;
 	height: $properties-height;
+	border-right: 1px solid #111010;
+	.properties_form{
+		padding: 10px;
+	}
 }
 
 .palette{

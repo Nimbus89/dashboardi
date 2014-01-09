@@ -1,7 +1,7 @@
 <%= form_for @panel, remote: true do |f| %>
 	<%= f.fields_for :properties, OpenStruct.new(@panel.properties) do |builder| %>
 		<% @panel.panel_type.panel_fields.each do |field| %>
-			<%= render "editor/property_fields/#{field.field_type}", properties: @panel.properties, field: field, f: builder %>
+			<%= render "editor/property_fields/#{field.field_type}", panel: @panel, field: field, f: builder %>
 		<% end %>
 	<% end %> 
 	<%= f.submit %> 

@@ -1,14 +1,14 @@
 //This view  constructs the javascript to be executed when a panel is selectedin the D&D editor
-var temp = $(".properties").html("<%= j render_properties_pane @panel %>")
+var temp = $(".properties_form").html("<%= j render_properties_pane @panel %>")
 
-$(".properties").off();
+$(".properties_form").off();
 
-$(".properties").on("click", ".add_fields_dyn", function(event){
+$(".properties_form").on("click", ".add_fields_dyn", function(event){
 	$(this).before($(this).data('fields'));
 	event.preventDefault();
 });
 
-$(".properties").on("click", ".remove_fields_dyn", function(event){
+$(".properties_form").on("click", ".remove_fields_dyn", function(event){
 	$(this).parent().remove();
 	$(this).remove();
 	event.preventDefault();
