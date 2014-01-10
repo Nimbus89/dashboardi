@@ -1,24 +1,14 @@
 Current Work:==============================================
 
 
--Drag & Drop page editor
---Context Menu
---Panel Delete
---Change page from inside editor
---Additional property fields
---Styling
---Fix panel collision (http://sourceforge.net/projects/jquidragcollide/)
---Properties pane submit on blur
-
+-Set up deployment strategy (Heroku)
 
 
 Bare Minimum:==================================
 
--target screen size + position options(stretch, corner, center, etc)
-
 -Fix crash on disconnect (websocket/tubesock)
 
--Set up deployment strategy (Heroku)
+
 
 High Priority:==========================================
 
@@ -41,6 +31,8 @@ Medium Priority:============================================
 
 -Adaption Layer - Twitter
 
+-Fix panel collision (http://sourceforge.net/projects/jquidragcollide/)
+
 -Geographic map panel
 
 -Additional Panels
@@ -48,6 +40,8 @@ Medium Priority:============================================
 -High quality styling & static pages with bootstrap.
 
 -Page Inheritance
+
+-Change page from inside editor
 
 Long Finger:=============================================================
 

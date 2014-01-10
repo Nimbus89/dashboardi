@@ -63,7 +63,7 @@ class PanelsController < ApplicationController
     @panel.destroy
     respond_to do |format|
       format.html { redirect_to topage }
-      format.json { head :no_content }
+      format.js
     end
   end
 

@@ -5,6 +5,7 @@
 //= require jquery_ujs
 //= require gridster
 //= require jquery-ui
+//= require jquery.ui-contextmenu
 
 //= require_tree "./editor"
 
