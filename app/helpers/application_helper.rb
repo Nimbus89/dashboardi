@@ -12,7 +12,7 @@ module ApplicationHelper
     fields = f.fields_for association do |builder|
       render partial, f: builder, value: ""
     end
-    link_to("Add "+ association.singularize, '#', class: "add_fields_dyn", data: { fields: fields.gsub("\n", "")})
+    link_to("Add "+ association.singularize, '#', class: "add_fields_dyn btn btn-xs btn-info", data: { fields: fields.gsub("\n", "")})
   end
 
 	def render_palette_item(item)

@@ -2,20 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$properties-height: 200px;
-$palette-width: 100px;
-$header-height: 40px;
+@import 'bootstrap';
+@import "font-awesome";
 
-body {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bottom_panel_height: 200px;
+$right_side_panel_width: 300px;
+$header-height: 40px;
+$text_field_label_width: 100px;
+
+@mixin bottom_panel {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: $right_side_panel_width;
+	height: $bottom_panel_height;
+	border-right: 1px solid #111010;
+}
+
+@mixin main_window {
+	position: fixed;
+	bottom: $bottom_panel_height;
+	top: 0;
+	left: 0;
+	right: $right_side_panel_width;
+}
+
+@mixin right_side_panel {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: $right_side_panel_width;
+	bottom: 0;
 }
 
 .workspace {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: $properties-height;
-	right: $palette-width;
+	@include main_window;
 	overflow: auto;
 	background-color: lightgreen;
 
@@ -24,9 +45,34 @@ body {
 	}
 
 	.workspace-inner {
-
 		background-color: green;
 	}
+}
+
+.properties {
+	@include right_side_panel;
+	background-color: #5A5A5A;
+	color: white;
+
+	.properties_form{
+		padding: 10px;
+		text-align: right;
+		.field, .dyn_field {
+			height: 40px;
+		}
+		.dyn_fields{
+			padding-bottom: 10px;
+		}
+	}
+}
+
+.palette{
+	@include bottom_panel;
+	background-color: blue;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .header {
@@ -37,28 +83,26 @@ body {
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 2px;
   text-shadow: 0 -1px 0 #1e1d1c;
-  padding-left: 10px;
+  padding-left: 15px;
+  font-size: 10px;
 }
 
-.properties {
-	background-color: #5A5A5A;
+input:not([type=submit]):not([type=file]), select{
 	color: white;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: $palette-width;
-	height: $properties-height;
-	border-right: 1px solid #111010;
-	.properties_form{
-		padding: 10px;
-	}
+	background-color: rgba(0,0,0,0.3);
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 6px 12px;
+	left: $text_field_label_width;
+	width: 170px;
 }
 
-.palette{
-	background-color: blue;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: $palette-width;
-	bottom: 0;
+label{
+	font-weight: bold;
+	opacity: 0.8;
+	display: inline-block;
+}
+
+legend{
+	color: white;
 }

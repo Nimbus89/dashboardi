@@ -4,6 +4,6 @@
 			<%= render "editor/property_fields/#{field.field_type}", panel: @panel, field: field, f: builder %>
 		<% end %>
 	<% end %> 
-	<%= f.submit %> 
+	<%= f.submit "Update Panel", class: "btn btn-success" %> 
 <% end %>
 
