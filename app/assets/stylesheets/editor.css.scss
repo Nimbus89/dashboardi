@@ -25,6 +25,8 @@ $text_field_label_width: 100px;
 	top: 0;
 	left: 0;
 	right: $right_side_panel_width;
+	border-bottom: 1px solid #111010;
+	border-right: 1px solid #111010;
 }
 
 @mixin right_side_panel {
@@ -38,14 +40,14 @@ $text_field_label_width: 100px;
 .workspace {
 	@include main_window;
 	overflow: auto;
-	background-color: lightgreen;
+	background-color: black;
 
 	.panel {
 		background-color: white;
 	}
 
 	.workspace-inner {
-		background-color: green;
+		background-color: gray;
 	}
 }
 
@@ -67,12 +69,36 @@ $text_field_label_width: 100px;
 }
 
 .palette{
+
 	@include bottom_panel;
-	background-color: blue;
+	color: white;
+	background-color: #5A5A5A;
+	ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+	}
+	.palette_items{
+		position: absolute;
+		top: $header-height;
+	}
+	.palette_item {
+		text-align: center;
+		display: inline-block;
+		vertical-align: top;
+		height: 100px;
+		width: 100px;
+		cursor: url(https://mail.google.com/mail/images/2/openhand.cur) 8 8, move;
+		.palette_icon{ font-size: 35px;}
+	}
+	.palette_item:hover{
+		background-color: rgba(255,255,255,0.3);
+	}
 }
 
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	user-select: none;
 }
 
 .header {
@@ -105,4 +131,11 @@ label{
 
 legend{
 	color: white;
+}
+
+.panel {
+	border-radius: 0px;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }

@@ -48,7 +48,7 @@ class PanelsController < ApplicationController
       puts "\nPanel Params:" + panel_params.to_s + "\n"
       if @panel.update(panel_params)
         format.html { redirect_to @panel, notice: 'Panel was successfully updated.' }
-        format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @panel.errors, status: :unprocessable_entity }

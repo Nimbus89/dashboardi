@@ -20,7 +20,7 @@ module ApplicationHelper
 	end
 
 	def render_workspace_panel(item)
-		render partial: "/editor/panel", locals: {panel: item}
+		
 	end
 
   def render_properties_pane(panel)

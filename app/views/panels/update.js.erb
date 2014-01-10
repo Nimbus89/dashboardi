@@ -1,0 +1,2 @@
+$("#<%= dom_id @panel %>").remove();
+$(".workspace-inner").append("<%= j render partial: "/editor/panel", locals: {panel: @panel} %>");

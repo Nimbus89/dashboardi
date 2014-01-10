@@ -40,7 +40,7 @@ class @ApplicationController
 			self.select_panel(id)
 		)
 	bind_palette_drop: =>
-		$(".palette .paletteItem").draggable({ helper: "clone" })
+		$(".palette .palette_item").draggable({ helper: "clone" })
 		$(".workspace").droppable({ accept: ".paletteItem" })
 		$(".workspace").on("drop", (event, ui) =>
 			panel_type_id = ui.draggable[0].dataset.paneltype
