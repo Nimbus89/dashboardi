@@ -33,6 +33,8 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = current_user.projects.new(project_params)
+    new_page = @project.pages.new({ name: "New Page"})
+    @project.startpage = new_page
     @project.date_created = Time.now
     @project.last_modified = Time.now
     respond_to do |format|

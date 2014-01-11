@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140109120139) do
     t.datetime "updated_at"
   end
 
-  add_index "panel_fields", ["panel_type_id"], name: "index_panel_fields_on_panel_type_id"
+  add_index "panel_fields", ["panel_type_id"], name: "index_panel_fields_on_panel_type_id", using: :btree
 
   create_table "panel_types", force: true do |t|
     t.string   "name"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140109120139) do
     t.text     "properties"
   end
 
-  add_index "panels", ["page_id"], name: "index_panels_on_page_id"
+  add_index "panels", ["page_id"], name: "index_panels_on_page_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140109120139) do
     t.datetime "updated_at"
   end
 
-  add_index "properties", ["panel_id"], name: "index_properties_on_panel_id"
+  add_index "properties", ["panel_id"], name: "index_properties_on_panel_id", using: :btree
 
   create_table "property_types", force: true do |t|
     t.string   "name"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20140109120139) do
     t.datetime "updated_at"
   end
 
-  add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id"
+  add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20140109120139) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
