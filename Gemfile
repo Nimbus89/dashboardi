@@ -61,3 +61,5 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
 gem 'best_in_place'
+
+ruby "2.0.0"
