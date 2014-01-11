@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Herokuapp::Application.load_tasks
+OpenVisu::Application.load_tasks

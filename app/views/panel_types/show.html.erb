@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @panel_type.name %>
+</p>
+
+<ul>
+<% @panel_type.panel_fields.each do |field| %>
+<li>
+	<strong>Name:</strong> <%= field.name %>
+	<strong>Type:</strong> <%= field.field_type %>
+</li>
+<% end %>
+</ul>
+<%= link_to 'Edit', edit_panel_type_path(@panel_type) %> |
+<%= link_to 'Back', panel_types_path %>

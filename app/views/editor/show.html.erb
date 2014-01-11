@@ -1,0 +1,21 @@
+<div class="workspace" data-pageID="<%= @page.id %>">
+	<div class="workspace-inner" style="height:<%= @page.project.screensize_y %>px; width:<%= @page.project.screensize_x %>px;">
+	<% @page.panels.each do |panel| %>
+		<%= render partial: "/editor/panel", locals: {panel: panel} %>
+	<% end %>
+	</div>
+</div>
+
+<div class="properties">
+	<div class="header">PROPERTIES</div>
+	<div class="properties_form"></div>
+</div>
+
+<div class="palette">
+<div class="header">PALETTE</div>
+	<div class="palette_items">
+	<% @palette.each do |pitem| %>
+	  <div class="palette_item" data-paneltype="<%= pitem.id %>"><%= render_palette_item pitem %></div>
+	<% end %>
+	</div>
+</div>

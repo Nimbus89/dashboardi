@@ -1,0 +1,149 @@
+// Place all the styles related to the editor controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+@import "font-awesome";
+
+$bottom_panel_height: 200px;
+$right_side_panel_width: 300px;
+$header-height: 40px;
+$text_field_label_width: 100px;
+
+@mixin bottom_panel {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: $right_side_panel_width;
+	height: $bottom_panel_height;
+	border-right: 1px solid #111010;
+}
+
+@mixin main_window {
+	position: fixed;
+	bottom: $bottom_panel_height;
+	top: 0;
+	left: 0;
+	right: $right_side_panel_width;
+	border-bottom: 1px solid #111010;
+	border-right: 1px solid #111010;
+}
+
+@mixin right_side_panel {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: $right_side_panel_width;
+	bottom: 0;
+}
+
+.workspace {
+	@include main_window;
+	overflow: auto;
+	background-color: black;
+
+	.panel {
+		background-color: white;
+	}
+
+	.workspace-inner {
+		background-color: gray;
+	}
+}
+
+.properties {
+	@include right_side_panel;
+	background-color: #5A5A5A;
+	color: white;
+
+	.properties_form{
+		padding: 10px;
+		text-align: right;
+		.field, .dyn_field {
+			height: 40px;
+		}
+		.dyn_fields{
+			padding-bottom: 10px;
+		}
+	}
+}
+
+.palette{
+
+	@include bottom_panel;
+	color: white;
+	background-color: #5A5A5A;
+	ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+	}
+	.palette_items{
+		position: absolute;
+		top: $header-height;
+	}
+	.palette_item {
+		text-align: center;
+		display: inline-block;
+		vertical-align: top;
+		height: 100px;
+		width: 100px;
+		cursor: url(https://mail.google.com/mail/images/2/openhand.cur) 8 8, move;
+		.palette_icon{ font-size: 35px;}
+	}
+	.palette_item:hover{
+		background-color: rgba(255,255,255,0.3);
+	}
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	user-select: none;
+}
+
+.header {
+  background-image: -webkit-linear-gradient(90deg, #2c2a29 0%, #32302f 100%);
+  border-bottom: 1px solid #111010;
+  height: $header-height;
+  line-height: $header-height;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  text-shadow: 0 -1px 0 #1e1d1c;
+  padding-left: 15px;
+  font-size: 10px;
+}
+
+input:not([type=submit]):not([type=file]), select{
+	color: white;
+	background-color: rgba(0,0,0,0.3);
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 6px 12px;
+	left: $text_field_label_width;
+	width: 170px;
+}
+
+label{
+	font-weight: bold;
+	opacity: 0.8;
+	display: inline-block;
+}
+
+legend{
+	color: white;
+}
+
+.ui-menu {
+	background-color: white;
+	border-radius: 4px;
+	padding: 4px;
+	list-style-type: none;
+	border: 1px solid  black;
+}
+
+.panel {
+	border-radius: 0px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}

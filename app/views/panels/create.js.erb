@@ -1,0 +1,3 @@
+//This view constructs the javascript to be executed when a new panel is created in the D&D editor
+var temp = $(".workspace").append("<%= j render partial: '/editor/panel', locals: {panel: @panel} %>");
+window.app.bind_panels();

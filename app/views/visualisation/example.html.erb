@@ -1,0 +1,80 @@
+<script>
+  var project = {
+  "name": "Example Project Name",
+  "connection_address" : "/sse/random",
+  "protocol" : "sse",
+  "pages" : [
+    {
+      "name": "Page 1",
+      "panels": [
+        {
+          "type": "gaugepanel",
+          "x": 1,
+          "y": 1,
+          "properties" : {
+            "title": "Value 1",
+            "key": "key2",
+            "max": 100,
+            "min": 0
+          }
+        },
+        {
+          "type": "navbutton",
+          "x": "4",
+          "y": "1",
+          "properties": {
+            "navagate_to" : 1,
+            "link_text" : "Go to Page 2"
+          }
+        },
+        {
+          "type": "timeseries",
+          "x" : 1,
+          "y" : 4,
+          "properties" : {
+            "ymax" : 10000,
+            "ymin" : 0,
+            "resolution": 100,
+            "refreshRate" : 100,
+            "keys" : ["key1", "key2"]
+          }
+        },
+        {
+          "type": "image",
+          "x" : 7,
+          "y" : 4,
+          "properties" : {
+            "srcs": ["http://2.bp.blogspot.com/-0tBpuH9MVMQ/TzApxSLTyBI/AAAAAAAAC0M/ZEhtLUPjUvE/s320/green-light.jpg",
+              "http://www.montaguebikes.com/folding-bikes-blog/wp-content/uploads/2012/08/redlight.jpg"],
+            "key" : "key3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Page 2",
+      "panels": [
+        {
+          "type": "value",
+          "x": 1,
+          "y": 1,
+          "properties" : {
+            "title": "Value 2",
+            "unit": "m/s",
+            "key": "key1"
+          }
+        },
+        {
+          "type": "navbutton",
+          "x": "4",
+          "y": "1",
+          "properties": {
+            "navagate_to" : 0,
+            "link_text" : "Go to Page 1"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>

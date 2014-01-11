@@ -16,9 +16,98 @@ ActiveRecord::Schema.define(version: 20140111172820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "panel_fields", force: true do |t|
+    t.string   "name"
+    t.string   "field_type"
+    t.integer  "panel_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "panel_fields", ["panel_type_id"], name: "index_panel_fields_on_panel_type_id", using: :btree
+
+  create_table "panel_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sizex"
+    t.integer  "sizey"
+  end
+
+  create_table "panels", force: true do |t|
+    t.string   "x"
+    t.string   "y"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "panel_type_id"
+    t.text     "properties"
+  end
+
+  add_index "panels", ["page_id"], name: "index_panels_on_page_id", using: :btree
+
   create_table "products", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.datetime "date_created"
+    t.datetime "last_modified"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "protocol"
+    t.string   "connection_address"
+    t.integer  "startpage_id"
+    t.integer  "screensize_x"
+    t.integer  "screensize_y"
+  end
+
+  create_table "properties", force: true do |t|
+    t.string   "value"
+    t.integer  "panel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "properties", ["panel_id"], name: "index_properties_on_panel_id", using: :btree
+
+  create_table "property_types", force: true do |t|
+    t.string   "name"
+    t.string   "value_type"
+    t.integer  "panel_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

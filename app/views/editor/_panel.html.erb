@@ -1,0 +1,3 @@
+<div id="<%= dom_id panel %>" data-panelid="<%=panel.id%>" style="width:<%= panel.panel_type.sizex %>px; height:<%= panel.panel_type.sizey %>px; left:<%= panel.x %>px; top:<%= panel.y %>px; position: absolute;" class="panel <%= panel.panel_type.name %>">
+	<%= render partial: "/editor/panels/#{panel.panel_type.name}", locals:{ panel: panel } %>
+</div>

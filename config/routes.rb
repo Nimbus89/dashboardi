@@ -1,8 +1,31 @@
-Herokuapp::Application.routes.draw do
-  resources :products
+OpenVisu::Application.routes.draw do
 
-  root 'products#index'
+  
 
+  get "editor/:page_id", to: "editor#show"
+  get "page/index"
+  get "page/edit"
+  get "page/new"
+  get "page/show"
+  resources :panel_types
+
+  get "sse/random"
+  get "sse/test"
+
+  get "websocket/rand3"
+
+  get "visualisation/example"
+  get "visualisation/:project_id", to: "visualisation#show"
+  get "visualisation/:project_id/:page_id", to: "visualisation#show"
+  root to: 'application#welcome'
+  
+  devise_for :users
+  
+  resources :projects
+
+  resources :pages
+
+  resources :panels
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -43,7 +66,7 @@ Herokuapp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-
+  
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

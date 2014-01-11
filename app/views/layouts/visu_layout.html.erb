@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenVisu</title>
+  <%= yield %>
+  <%= stylesheet_link_tag    "visualisation", media: "all" %>
+  <%= javascript_include_tag "visualisation" %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+
+<div class="container">
+	<div class="page"></div>
+</div>
+
+</body>
+</html>

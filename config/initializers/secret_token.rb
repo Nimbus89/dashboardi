@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Herokuapp::Application.config.secret_key_base = '986c32a9b5a4d8c45fc80388410dd122345bca51d7eada92d45347ab6e9d6d71e446b2d9bc9e518febf0e291a2e4b0c439abfcf882bcb4e369326c783c73a6fb'
+OpenVisu::Application.config.secret_key_base = '45a982e49b1ea73e074023a44c937e721d8c63ef06bb8d00bd2b615fd1f878108c76147b0bf3b62c1c80f3fc6413d251a9f21f28f5ee08a9e262e8eb94b5a680'
