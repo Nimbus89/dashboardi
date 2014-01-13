@@ -60,6 +60,6 @@ gem 'bootstrap-sass'
 
 gem "font-awesome-rails"
 
-gem 'best_in_place'
+gem 'best_in_place', path: './vendor/best_in_place-rails-4'
 
 ruby "2.0.0"

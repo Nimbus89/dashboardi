@@ -20,11 +20,6 @@
   <%= best_in_place @project, :screensize_x %> x <%= best_in_place @project, :screensize_y %>
 </p>
 
-<p>
-  <strong>Connection Address:</strong>
-  <%= best_in_place @project, :connection_address %>
-</p>
-
 <h2>Pages</h2>
 <table class="table table-striped table-bordered table-hover">
 <% unless @project.startpage == nil %>

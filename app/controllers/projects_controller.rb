@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @new_page = Page.new({project: @project, name: "New Page"})
+    @new_page = Page.new({project: @project, name: generate_new_page_name})
     @pages_list = @project.pages.map {|i| [i.id, i.name]}
   end
 
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = current_user.projects.new(project_params)
-    new_page = @project.pages.new({ name: "New Page"})
+    new_page = @project.pages.new({ name: generate_new_page_name})
     @project.startpage = new_page
     @project.date_created = Time.now
     @project.last_modified = Time.now
@@ -52,14 +52,13 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
-      puts "DEBUG ================================="
       puts project_params
       if @project.update(project_params)
         format.html { redirect_to @project }
-        format.json { head :no_content }
+        format.json { respond_with_bip(@project) }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@project) }
       end
     end
   end
@@ -76,6 +75,8 @@ class ProjectsController < ApplicationController
 
   private
   
+
+
     def check_user
       fail "Wrong User" unless current_user == Project.find(params[:id]).user
     end
@@ -95,5 +96,17 @@ class ProjectsController < ApplicationController
 
     def bip_format_collection( pages )
       pages.map {|i| [i.id, i.name]}
+    end
+
+    def generate_new_page_name
+      if (@project.pages.find_by name: "New Page") != nil
+        i = 0
+        while (@project.pages.find_by name: "New Page (#{i})") != nil
+          i = i + 1
+        end
+        "New Page (#{i})"
+      else
+        "New Page"
+      end
     end
 end

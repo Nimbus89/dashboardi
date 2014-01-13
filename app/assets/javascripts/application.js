@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.purr
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
 //= require best_in_place
+//= require best_in_place.purr
 //= require projects
 
 

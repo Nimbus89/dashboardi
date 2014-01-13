@@ -31,6 +31,12 @@
     <%= f.text_field :connection_address, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :screensize_x, "Target Screen Size" %><br>
+    <%= f.text_field :screensize_x, class: "form-control", placeholder: 'Width in pixels' %>
+    <%= f.text_field :screensize_y, class: "form-control", placeholder: 'Height in pixels' %>
+  </div>
+
   <div class="actions">
     <%= f.submit class: "btn btn-lg btn-primary btn-block" %>
   </div>

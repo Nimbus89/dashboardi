@@ -18,7 +18,7 @@ PanelField.create( name: "min", field_type: "text_field", panel_type: gaugepanel
 PanelField.create( name: "max", field_type: "text_field", panel_type: gaugepanel)
 
 navbutton = PanelType.create( name: "navbutton", sizex: 160, sizey: 80 )
-PanelField.create( name: "navagate_to", field_type: "text_field", panel_type: navbutton)
+PanelField.create( name: "navagate_to", field_type: "page_select", panel_type: navbutton)
 PanelField.create( name: "link_text", field_type: "text_field", panel_type: navbutton)
 
 timeseries = PanelType.create( name: "timeseries", sizex: 560, sizey: 320 )
