@@ -2,15 +2,9 @@ Current Work:==============================================
 
 -image panel
 
--validations
+-Visu error messages (Can't connect etc)
 
--best_in_place purr notifications
-
--Update project creation form.
-
--Notifications CSS/HTML
-
--Make Page/Project name unique
+-Look into websocket rails again. (Tubesock? Pusher?)
 
 Bare Minimum:==================================
 

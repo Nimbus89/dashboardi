@@ -76,7 +76,9 @@ class PanelsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def panel_params
       params.require(:panel).permit(:id, :x, :y, :page_id, :panel_type_id).tap do |whitelisted|
-        whitelisted[:properties] = params[:panel][:properties]
+        if(params[:panel].has_key?(:properties))
+          whitelisted[:properties] = params[:panel][:properties]
+        end
       end
     end
 end
