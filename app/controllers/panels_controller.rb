@@ -23,6 +23,9 @@ class PanelsController < ApplicationController
 
   # GET /panels/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /panels
@@ -33,7 +36,7 @@ class PanelsController < ApplicationController
     respond_to do |format|
       if @panel.save
         format.html { redirect_to @panel, notice: 'Panel was successfully created.' }
-        format.js
+        format.js { redirect_to @panel }
       else
         format.html { render action: 'new' }
         format.json { render json: @panel.errors, status: :unprocessable_entity }

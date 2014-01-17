@@ -1,9 +1,9 @@
 class AddRandomDataSource < ActiveRecord::Migration
   def self.up
-  	websocket = DataSourceType.create( name: "random" )
-  	DataSourceField.create( data_source_type: websocket, name: "key", field_type: "text_field")
-  	DataSourceField.create( data_source_type: websocket, name: "min", field_type: "text_field")
-  	DataSourceField.create( data_source_type: websocket, name: "max", field_type: "text_field")
+  	random = DataSourceType.create( name: "random" )
+  	DataSourceField.create( data_source_type: random, name: "key", field_type: "text_field")
+  	DataSourceField.create( data_source_type: random, name: "min", field_type: "text_field")
+  	DataSourceField.create( data_source_type: random, name: "max", field_type: "text_field")
   end
 
   def self.down

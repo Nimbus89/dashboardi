@@ -1,10 +1,5 @@
 Current Work:==============================================
 
-- Multiple data sources
-- retest / refactor websocket connection
-- refactor panel views
-- dyn_fields javascript wrong place refactor
-
 
 High Priority:==========================================
 

@@ -11,7 +11,7 @@ OpenVisu::Application.routes.draw do
   resources :data_sources
   get "sse/oldRandom/", to: "sse#oldRandom"
   get "sse/random/:project_id", to: "sse#random"
-  get "sse/test"
+  get "sse/ping/:source_id", to: "sse#ping"
 
   get "websocket/rand3"
 

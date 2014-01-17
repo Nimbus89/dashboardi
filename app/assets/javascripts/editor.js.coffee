@@ -11,5 +11,16 @@
 
 
 jQuery(($) -> 
+
+	$(".properties").on("click", ".add_fields_dyn", (event) ->
+		$(this).before($(this).data('fields'));
+		event.preventDefault();
+	)
+
+	$(".properties").on("click", ".remove_fields_dyn", (event) ->
+		$(this).parent().remove();
+		$(this).remove();
+		event.preventDefault();
+	)
 	window.app = new ApplicationController()
 )

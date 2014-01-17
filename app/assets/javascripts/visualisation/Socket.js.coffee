@@ -1,9 +1,12 @@
 class @Socket
 
-  @WEBSOCKET_RETRY_DELAY: 500
-  @WEBSOCKET_RETRY_COUNT: 10
+
 
   constructor: (project, eHandler) ->
+
+    @WEBSOCKET_RETRY_DELAY = 5000
+    @WEBSOCKET_RETRY_COUNT = 30
+
     @eHandler = eHandler
     @id = project.id
     @dataSources = project.data_sources
@@ -13,9 +16,9 @@ class @Socket
 
     for dataSource in @dataSources
       if dataSource.type is "websocket"
-        websocket = new WebSocket(dataSource.fields.address)
-        setTimeout(()->
-          testReady(websocket, 0)
+        websocket = new WebSocket(dataSource.fields.address, "visu")
+        setTimeout(()=>
+          @testReady(websocket, 0)
         , @WEBSOCKET_RETRY_DELAY)
 
       if dataSource.type is "server sent events"
@@ -28,6 +31,12 @@ class @Socket
       if dataSource.type is "random" && not @hasRandom
         @hasRandom = true
         source = new EventSource("/sse/random/" + @id)
+        source.addEventListener("update", (e) =>
+          @process_sse_message(e.data)
+        )
+      if dataSource.type is "HTTP ping"
+        @hasRandom = true
+        source = new EventSource("/sse/ping/" + dataSource.id)
         source.addEventListener("update", (e) =>
           @process_sse_message(e.data)
         )
@@ -48,7 +57,7 @@ class @Socket
   
   testReady: (websocket, retryCount) =>
     if(retryCount < @WEBSOCKET_RETRY_COUNT)
-      if @websocket.readyState is 1
+      if websocket.readyState is 1
         websocket.onmessage = (evt) => @process_websocket_message(evt)
       else
         setTimeout(()->
@@ -56,7 +65,6 @@ class @Socket
         , @WEBSOCKET_RETRY_DELAY)
     else
       @eHandler.handle("Error: Cannot connect to websocket: " + websocket)
-
   process_websocket_message: (evt) =>
     obj = JSON.parse(evt.data)
     @trigger_callbacks(obj.key, obj.value)

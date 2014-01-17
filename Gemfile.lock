@@ -54,6 +54,7 @@ GEM
     ejs (1.0.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    ffi (1.9.3)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     handlebars_assets (0.14.1)
@@ -75,6 +76,8 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.4)
+    net-ping (1.7.1)
+      ffi (>= 1.0.0)
     orm_adapter (0.4.0)
     pg (0.17.1)
     polyglot (0.3.3)
@@ -157,6 +160,7 @@ DEPENDENCIES
   handlebars_assets
   jbuilder (~> 1.2)
   jquery-rails
+  net-ping
   pg
   puma
   rails

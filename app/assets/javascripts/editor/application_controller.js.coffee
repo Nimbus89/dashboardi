@@ -67,7 +67,7 @@ class @ApplicationController
 	select_panel: (panel_id) =>
 		$.ajax({
 			type: "GET",
-			url: '/panels/' + panel_id,
+			url: '/panels/' + panel_id + '/edit',
 			data: {},
 			contentType: 'application/json',
 			dataType: 'script',
