@@ -1,8 +1,15 @@
-json.extract! @project, :protocol, :connection_address
+json.extract! @project, :protocol, :connection_address, :data_sources, :id
 json.startpage_id @startpage_id
 json.screensize_x @project.screensize_x
 json.screensize_y @project.screensize_y
 
+json.data_sources do
+	json.array! @project.data_sources do |source|
+		json.type source.data_source_type.name
+		json.fields source.fields
+		json.id source.id
+	end
+end
 
 json.set! :pages do
 	@project.pages.each do |page|

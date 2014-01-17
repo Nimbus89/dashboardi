@@ -1,0 +1,26 @@
+<%= form_for(@data_source) do |f| %>
+  <% if @data_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_source.errors.count, "error") %> prohibited this data_source from being saved:</h2>
+
+      <ul>
+      <% @data_source.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :fields, OpenStruct.new(@data_source.fields) do |builder| %>
+    <% @data_source.data_source_type.data_source_fields.each do |field| %>
+      <%= render "dynamic_fields/#{field.field_type}", field: field, f: builder, fields:@data_source.fields  %>
+    <% end %>
+  <% end %>
+
+  <%= f.hidden_field :data_source_type_id %>
+  <%= f.hidden_field :project_id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112192226) do
+ActiveRecord::Schema.define(version: 20140116235309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_source_fields", force: true do |t|
+    t.string   "name"
+    t.string   "field_type"
+    t.integer  "data_source_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_source_fields", ["data_source_type_id"], name: "index_data_source_fields_on_data_source_type_id", using: :btree
+
+  create_table "data_source_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "data_sources", force: true do |t|
+    t.integer  "data_source_type_id"
+    t.integer  "project_id"
+    t.text     "fields"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "data_sources", ["data_source_type_id"], name: "index_data_sources_on_data_source_type_id", using: :btree
+  add_index "data_sources", ["project_id"], name: "index_data_sources_on_project_id", using: :btree
 
   create_table "pages", force: true do |t|
     t.string   "name"
@@ -91,6 +118,13 @@ ActiveRecord::Schema.define(version: 20140112192226) do
   end
 
   add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id", using: :btree
+
+  create_table "sse_data_sources", force: true do |t|
+    t.string   "address"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

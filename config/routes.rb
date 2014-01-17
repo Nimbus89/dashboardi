@@ -8,8 +8,9 @@ OpenVisu::Application.routes.draw do
   get "page/new"
   get "page/show"
   resources :panel_types
-
-  get "sse/random"
+  resources :data_sources
+  get "sse/oldRandom/", to: "sse#oldRandom"
+  get "sse/random/:project_id", to: "sse#random"
   get "sse/test"
 
   get "websocket/rand3"

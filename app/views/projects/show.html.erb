@@ -20,6 +20,45 @@
   <%= best_in_place @project, :screensize_x %> x <%= best_in_place @project, :screensize_y %>
 </p>
 
+<h2>Data Sources</h2>
+<table class="table table-striped table-bordered table-hover">
+
+  <thead>
+    <tr>
+      <th>Current DataSources <em>(mouseover to view details)</em></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project.data_sources.each do |data_source| %>
+      <tr>
+        <td><span title="<%= data_source.fields.to_json %>"><%= data_source.data_source_type.name %></span></td>
+        <td><%= link_to "Edit", edit_data_source_path(data_source), class: "btn btn-info" %></td>
+        <td><%= link_to 'Delete', data_source, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>New DataSource</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+<%= form_tag new_data_source_path, method: :get do %>
+<%= hidden_field_tag :project_id, @project.id %>
+  <tbody>
+    <tr>
+      <td><%= select_tag :data_source_type_id, options_from_collection_for_select(DataSourceType.all, "id", "name") %></td>
+      <td colspan="2"><%= submit_tag "Add Data Source", class: "btn btn-primary" %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
 <h2>Pages</h2>
 <table class="table table-striped table-bordered table-hover">
 <% unless @project.startpage == nil %>

@@ -20,4 +20,15 @@
 //= require projects
 
 
+jQuery(function($){
+	$(".dyn_fields").on("click", ".add_fields_dyn", function(event){
+		$(this).before($(this).data('fields'));
+		event.preventDefault();
+	});
 
+	$(".dyn_fields").on("click", ".remove_fields_dyn", function(event){
+		$(this).parent().remove();
+		$(this).remove();
+		event.preventDefault();
+	});
+})

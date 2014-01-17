@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @new_page = Page.new({project: @project, name: generate_new_page_name})
+    @new_data_source = DataSource.new({project: @project})
     @pages_list = @project.pages.map {|i| [i.id, i.name]}
   end
 

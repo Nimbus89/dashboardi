@@ -13,7 +13,7 @@
 //= require_tree ./visualisation
 
 jQuery(($) -> 
-  socket = new window.Socket(project.protocol, project.connection_address, (socket) ->
-    app = new window.ApplicationController(socket);
-  )
+
+    app = new window.ApplicationController(window.project)
+
 )

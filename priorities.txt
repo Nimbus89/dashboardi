@@ -1,36 +1,33 @@
 Current Work:==============================================
 
--image panel
-
--Visu error messages (Can't connect etc)
-
--Look into websocket rails again. (Tubesock? Pusher?)
-
-Bare Minimum:==================================
-
--Fix crash on disconnect (websocket/tubesock)
-
+- Multiple data sources
+- retest / refactor websocket connection
+- refactor panel views
+- dyn_fields javascript wrong place refactor
 
 
 High Priority:==========================================
 
+-image panel
 
+-Visu error messages (Can't connect etc)
 
--Adaption Layer - Realtime-Persisted
 -Adaption Layer - HTTP Ping
 
--Static non-user-specific link to view visualisation
 -Ability to make visualisations public/private
+
+-Change page from inside editor
+
+-Definitions to allow manipulation of incoming data. (Analytics)
+
+Medium Priority:============================================
 
 -Eager Loading
 --Miniprofiler
 
--Some user styling options (Basic color picking)
--Additional Program styling
+-Look into websocket rails again. (Tubesock? Pusher?)
 
--Current status panels (Bar chart, pie chart, etc)
-
-Medium Priority:============================================
+-Adaption Layer - Realtime-Persisted
 
 -Adaption Layer - Twitter
 
@@ -38,27 +35,11 @@ Medium Priority:============================================
 
 -Geographic map panel
 
--Additional Panels
-
--High quality styling & static pages with bootstrap.
-
--Page Inheritance
-
--Change page from inside editor
+-Current status panels (Bar chart, pie chart, etc)
 
 Long Finger:=============================================================
 
--Investigate potential performance problem (Increase interface complexity to reduce message amount? Make optional?)
-
--Additional Panels for large or static data sets (& Adaption layer?) E.g. heatmap.
-
--Functional programming definitions to allow manipulation of incoming data.
-
--Resizable panels (will take considerable javascript effort)
-
--Input panels: Keyboard / slider / buttons / numpad / etc (Visualisations become dashboards/control panels)
-
-Possible extras:=================================================================
+-Resizable panels (will take considerable javascript & CSS effort)
 
 -OPC adaption layer/program to allow visualisations for industrial devices.
 

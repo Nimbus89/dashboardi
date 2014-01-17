@@ -1,0 +1,11 @@
+
+<%= field_set_tag field.name, class: "dyn_fields" do %>
+<%= f.fields_for field.name do |builder| %>
+	<% if panel.properties[field.name] != nil %>
+		<% panel.properties[field.name].each do |value, index| %>
+			<%= render "dynamic_fields/string_array_field", value: value, f:builder %>
+		<% end %>
+	<% end %>
+	<%= link_to_add_fields_dyn f, field.name, "dynamic_fields/string_array_field" %>
+<% end %>
+<% end %>
