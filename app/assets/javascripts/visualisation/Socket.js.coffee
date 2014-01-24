@@ -15,43 +15,37 @@ class @Socket
 
 
     for dataSource in @dataSources
-      if dataSource.type is "websocket"
-        websocket = new WebSocket(dataSource.fields.address, "visu")
-        setTimeout(()=>
-          @testReady(websocket, 0)
-        , @WEBSOCKET_RETRY_DELAY)
+      try
+        if dataSource.type is "websocket"
+          websocket = new WebSocket(dataSource.fields.address, "visu")
+          setTimeout(()=>
+            @testReady(websocket, 0)
+          , @WEBSOCKET_RETRY_DELAY)
 
-      if dataSource.type is "server sent events"
-        source = new EventSource(dataSource.fields.address)
-        source.addEventListener("update", (e) =>
-          @process_sse_message(e.data)
-        )
-        source.onError = (e) =>
-          @eHandler.handle("Cannot Connect to SSE source: " + source )
-      if dataSource.type is "random" && not @hasRandom
-        @hasRandom = true
-        source = new EventSource("/sse/random/" + @id)
-        source.addEventListener("update", (e) =>
-          @process_sse_message(e.data)
-        )
-      if dataSource.type is "HTTP ping"
-        @hasRandom = true
-        source = new EventSource("/sse/ping/" + dataSource.id)
-        source.addEventListener("update", (e) =>
-          @process_sse_message(e.data)
-        )
-    # if @protocol is "websocket"
-    #   @websocket = new WebSocket(http)
-    #   setTimeout(testready,500)
-    #   @websocket.onmessage = (evt) => @process_websocket_message(evt)
-    # else if @protocol is "sse"
-    #   @source = new EventSource(http)
-    #   @source.addEventListener("update", (e) =>
-    #     @process_sse_message(e.data)
-    #   )
-    #   cb(this)
-    # else
-    #   cb(this)
+        if dataSource.type is "server sent events"
+          source = new EventSource(dataSource.fields.address)
+          source.addEventListener("update", (e) =>
+            @process_sse_message(e.data)
+          )
+          source.onError = (e) =>
+            @eHandler.handle("Cannot Connect to SSE source: " + source )
+        if dataSource.type is "random" && not @hasRandom
+          @hasRandom = true
+          source = new EventSource("/sse/random/" + @id)
+          source.addEventListener("update", (e) =>
+            @process_sse_message(e.data)
+          )
+        if dataSource.type is "HTTP ping"
+          @hasRandom = true
+          source = new EventSource("/sse/ping/" + dataSource.id)
+          source.addEventListener("update", (e) =>
+            @process_sse_message(e.data)
+          )
+      catch err
+        @eHandler.handle(err)
+
+      
+
 
 
   

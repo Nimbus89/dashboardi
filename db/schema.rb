@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117194639) do
+ActiveRecord::Schema.define(version: 20140124005834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,11 +93,10 @@ ActiveRecord::Schema.define(version: 20140117194639) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "protocol"
-    t.string   "connection_address"
     t.integer  "startpage_id"
-    t.integer  "screensize_x",       default: 800
-    t.integer  "screensize_y",       default: 600
+    t.integer  "screensize_x",  default: 800
+    t.integer  "screensize_y",  default: 600
+    t.boolean  "private"
   end
 
   create_table "properties", force: true do |t|

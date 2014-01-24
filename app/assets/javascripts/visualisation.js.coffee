@@ -7,6 +7,7 @@
 //= require raphael
 //= require justgauge
 //= require jquery.flot
+//= require jquery.purr
 
 
 //= require_tree ./templates

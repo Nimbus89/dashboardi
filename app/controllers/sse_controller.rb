@@ -25,8 +25,17 @@ class SseController < ApplicationController
     response.headers['Content-Type'] = 'text/event-stream'
     30.times do
       rand_sources.each do |source|
-        rand_num = rand(source.fields['max'].to_i - source.fields['min'].to_i) + source.fields['min'].to_i
-        sendMessage source.fields['key'], rand_num.to_s, "update"
+        source.fields['keys'].each do |key|
+          max = source.fields['max'].to_i
+          min = source.fields['min'].to_i
+          if(max < min)
+            temp = max
+            max = min
+            min = temp
+          end
+          rand_num = rand(max - min + 1) + min
+          sendMessage key, rand_num.to_s, "update"
+        end
       end
       sleep 0.5
     end

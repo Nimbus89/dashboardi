@@ -22,19 +22,14 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :protocol %><br>
-    <%= f.text_field :protocol, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :connection_address %><br>
-    <%= f.text_field :connection_address, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
     <%= f.label :screensize_x, "Target Screen Size" %><br>
     <%= f.text_field :screensize_x, class: "form-control", placeholder: 'Width in pixels' %>
     <%= f.text_field :screensize_y, class: "form-control", placeholder: 'Height in pixels' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :private, "Make project visible to others?" %><br>
+    <%= f.select :private, options_for_select([["Private", true],["Public", false]]), class: "form-control" %>
   </div>
 
   <div class="actions">

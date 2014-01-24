@@ -25,6 +25,10 @@ body {
     background-color: white;
   }
   
+  .panel {
+    overflow: hidden;
+  }
+
   .valuePanel {
     color: black;
     text-align: center;
@@ -47,4 +51,15 @@ body {
         height: 100%;
     }
   }
+}
+
+.purr {
+  position: fixed;
+  width: 324px;
+  top: 70px;
+  right: 15px;
+  padding: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
 }

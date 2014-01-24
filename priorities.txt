@@ -3,19 +3,25 @@ Current Work:==============================================
 
 High Priority:==========================================
 
--image panel
-
--Visu error messages (Can't connect etc)
-
--Adaption Layer - HTTP Ping
-
--Ability to make visualisations public/private
-
--Change page from inside editor
+-Roll visu and editor controllers into page controller
 
 -Definitions to allow manipulation of incoming data. (Analytics)
 
+
+
+
 Medium Priority:============================================
+
+-random float data source
+--random walk generator
+
+-Improve error checking in visu
+
+-Label Panel
+
+-Nav Bar Panel
+
+-Help Section
 
 -Eager Loading
 --Miniprofiler

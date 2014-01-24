@@ -6,9 +6,20 @@
 	</div>
 </div>
 
-<div class="properties">
-	<div class="header">PROPERTIES</div>
-	<div class="properties_form"></div>
+<div class="right_bar">
+	<div class="properties">
+		<div class="header">PROPERTIES</div>
+		<div class="properties_form"></div>
+	</div>
+
+	<div class="pages">
+		<div class="header">CHANGE PAGE</div>
+		<div class="pages_inner">
+			<% @page.project.pages.each do |page| %>
+				<div class="page_link"><%= link_to page.name, editor_path(page) %></div>
+			<% end %>
+		</div>
+	</div>
 </div>
 
 <div class="palette">

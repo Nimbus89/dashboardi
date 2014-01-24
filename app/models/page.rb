@@ -1,5 +1,6 @@
 class Page < ActiveRecord::Base
 	belongs_to :project
+	has_one :user, through: :project
 	has_many :panels
 	accepts_nested_attributes_for :panels
 

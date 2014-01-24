@@ -2,4 +2,4 @@ class @ErrorHandler
 	constructor: () ->
 
 	handle: (errorMessage) =>
-		alert(errorMessage)
+		$("<p>" + errorMessage + "</p>").purr()

@@ -1,4 +1,4 @@
-json.extract! @project, :protocol, :connection_address, :data_sources, :id
+json.extract! @project, :data_sources, :id
 json.startpage_id @startpage_id
 json.screensize_x @project.screensize_x
 json.screensize_y @project.screensize_y

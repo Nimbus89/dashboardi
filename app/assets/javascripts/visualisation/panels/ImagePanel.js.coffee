@@ -2,7 +2,7 @@ class @ImagePanel extends @Panel
   constructor: (json, app, socket) ->
     super(json, app, socket, 'ImagePanel')
     @key = 0
-    @srcs = json.properties.srcs
+    @srcs = json.properties.images
     @render()
     @socket.add_subscription(json.properties.key, this)
 
@@ -17,6 +17,8 @@ class @ImagePanel extends @Panel
       @key = 0
 
     @html.html(@template(@renderHash()))
-
+    newHtml = $(@template(@renderHash()))
+    @html.replaceWith(newHtml)
+    @html = newHtml
   renderHash: =>
-    {src: @srcs[@key]}
+    @mergeHashes super(), {src: @srcs[@key]}

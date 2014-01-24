@@ -1,6 +1,10 @@
 class DataSourcesController < ApplicationController
   before_action :set_data_source, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+
+  before_filter :check_user, only: [:show, :edit, :update, :destroy]
+
   # GET /data_sources
   # GET /data_sources.json
   def index
@@ -63,6 +67,9 @@ class DataSourcesController < ApplicationController
   end
 
   private
+    def check_user
+      fail "Wrong User" unless current_user == DataSource.find(params[:id]).user
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_data_source
       @data_source = DataSource.find(params[:id])

@@ -9,6 +9,7 @@ $bottom_panel_height: 200px;
 $right_side_panel_width: 300px;
 $header-height: 40px;
 $text_field_label_width: 100px;
+$page_list_height: 300px;
 
 @mixin bottom_panel {
 	position: fixed;
@@ -44,6 +45,8 @@ $text_field_label_width: 100px;
 
 	.panel {
 		background-color: white;
+		overflow: hidden;
+		padding: 5px;
 	}
 
 	.workspace-inner {
@@ -51,10 +54,18 @@ $text_field_label_width: 100px;
 	}
 }
 
-.properties {
+.right_bar {
 	@include right_side_panel;
+}
+
+.properties {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: $page_list_height;
 	background-color: #5A5A5A;
 	color: white;
+	position: absolute;
 
 	.properties_form{
 		padding: 10px;
@@ -65,6 +76,26 @@ $text_field_label_width: 100px;
 		.dyn_fields{
 			padding-bottom: 10px;
 		}
+	}
+}
+
+.pages {
+	height: $page_list_height;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	background-color: #5A5A5A;
+	.page_link a{
+		border-bottom: 1px solid black;
+		display: block;
+		padding: 5px;
+		text-align: center;
+		font-size: 150%;
+		color: white;
+	}
+	.page_link a:hover{
+		background-color: rgba(255,255,255,0.3);
 	}
 }
 
