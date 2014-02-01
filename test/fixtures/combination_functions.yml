@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  input_keys: MyText
+  output_key: MyString
+  time_range: 1
+  function: MyString
+  project_id: 
+
+two:
+  input_keys: MyText
+  output_key: MyString
+  time_range: 1
+  function: MyString
+  project_id: 

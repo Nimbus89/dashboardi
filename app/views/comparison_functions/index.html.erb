@@ -1,0 +1,37 @@
+<h1>Listing comparison_functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Constant</th>
+      <th>Input key</th>
+      <th>Second input</th>
+      <th>Function</th>
+      <th>Output key</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comparison_functions.each do |comparison_function| %>
+      <tr>
+        <td><%= comparison_function.constant %></td>
+        <td><%= comparison_function.input_key %></td>
+        <td><%= comparison_function.second_input %></td>
+        <td><%= comparison_function.function %></td>
+        <td><%= comparison_function.output_key %></td>
+        <td><%= comparison_function.project %></td>
+        <td><%= link_to 'Show', comparison_function %></td>
+        <td><%= link_to 'Edit', edit_comparison_function_path(comparison_function) %></td>
+        <td><%= link_to 'Destroy', comparison_function, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comparison function', new_comparison_function_path %>

@@ -18,11 +18,14 @@
   position: fixed;
   top: 50px;
   width: 100%;
+  bottom: 0;
+  overflow: auto;
  }
 
  #main-window {
  	max-width: 1000px;
  	margin: 0 auto;
+ 	
  }
 
  .devise-form {

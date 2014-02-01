@@ -1,0 +1,7 @@
+  <div class="form-group">
+    <%= f.label :max_value %> <%= f.text_field :max_value %><br>
+    <%= f.label :min_value %> <%= f.text_field :min_value %> <br>
+    <%= f.label :output_value %> <%= f.text_field :output_value %><br>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "remove", '#', class: "remove_fields btn btn-danger btn-xs btn-block" %>
+  </div>

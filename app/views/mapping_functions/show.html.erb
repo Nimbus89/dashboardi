@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Input key:</strong>
+  <%= @mapping_function.input_key %>
+</p>
+
+<p>
+  <strong>Output key:</strong>
+  <%= @mapping_function.output_key %>
+</p>
+
+<p>
+  <strong>Default value:</strong>
+  <%= @mapping_function.default_value %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @mapping_function.project %>
+</p>
+
+<%= link_to 'Edit', edit_mapping_function_path(@mapping_function) %> |
+<%= link_to 'Back', mapping_functions_path %>

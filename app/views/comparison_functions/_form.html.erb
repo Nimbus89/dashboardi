@@ -1,0 +1,44 @@
+<%= form_for [@project, @comparison_function] do |f| %>
+  <% if @comparison_function.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comparison_function.errors.count, "error") %> prohibited this comparison_function from being saved:</h2>
+
+      <ul>
+      <% @comparison_function.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :constant, "Second Input Type" %><br>
+    <%= f.select :constant, options_for_select([["Constant", true],["Key", false]]), {}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :input_key %><br>
+    <%= f.text_field :input_key, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :second_input %><br>
+    <%= f.text_field :second_input, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :output_key %><br>
+    <%= f.text_field :output_key, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :function %><br>
+    <%= f.select :function, options_for_select([
+      ["First Input > Second Input", "gt"],
+      ["First Input >= Second Input", "gte"],
+      ["First Input < Second Input", "lt"],
+      ["First Input <= Second Input", "lte"],
+      ["First Input == Second Input", "eq"],
+      ["First Input != Second Input", "neq"],
+    ]), {}, {class: "form-control"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-block btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing combination_functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input keys</th>
+      <th>Output key</th>
+      <th>Time range</th>
+      <th>Function</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @combination_functions.each do |combination_function| %>
+      <tr>
+        <td><%= combination_function.input_keys %></td>
+        <td><%= combination_function.output_key %></td>
+        <td><%= combination_function.time_range %></td>
+        <td><%= combination_function.function %></td>
+        <td><%= combination_function.project %></td>
+        <td><%= link_to 'Show', combination_function %></td>
+        <td><%= link_to 'Edit', edit_combination_function_path(combination_function) %></td>
+        <td><%= link_to 'Destroy', combination_function, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Combination function', new_combination_function_path %>

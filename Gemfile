@@ -65,3 +65,7 @@ gem 'best_in_place', path: './vendor/best_in_place-rails-4'
 gem 'net-ping'
 
 ruby "2.0.0"
+
+group :development do
+  gem "rails-erd"
+end

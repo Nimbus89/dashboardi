@@ -17,10 +17,8 @@
 //= require underscore
 //= require best_in_place
 //= require best_in_place.purr
-//= require projects
 
-
-jQuery(function($){
+var init = function(){
 	$(".dyn_fields").on("click", ".add_fields_dyn", function(event){
 		$(this).before($(this).data('fields'));
 		event.preventDefault();
@@ -31,17 +29,21 @@ jQuery(function($){
 		$(this).remove();
 		event.preventDefault();
 	});
-})
 
-$(document).on("page:load", function(){
-	$(".dyn_fields").on("click", ".add_fields_dyn", function(event){
-		$(this).before($(this).data('fields'));
-		event.preventDefault();
+  	$('form').on('click', '.remove_fields', function(event){
+	    $(this).prev('input[type=hidden]').val('1');
+	    $(this).parent().hide();
+	    event.preventDefault();
 	});
 
-	$(".dyn_fields").on("click", ".remove_fields_dyn", function(event){
-		$(this).parent().remove();
-		$(this).remove();
-		event.preventDefault();
+	$('form').on('click', '.add_fields', function(event){
+	  time = new Date().getTime();
+	  regexp = new RegExp($(this).data('id'), 'g');
+	  $(this).before($(this).data('fields').replace(regexp, time));
+	  event.preventDefault();
 	});
-})
+};
+
+jQuery(init);
+
+$(document).on("page:load", init);

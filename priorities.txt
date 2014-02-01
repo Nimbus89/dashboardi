@@ -3,8 +3,6 @@ Current Work:==============================================
 
 High Priority:==========================================
 
--Roll visu and editor controllers into page controller
-
 -Definitions to allow manipulation of incoming data. (Analytics)
 
 

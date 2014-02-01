@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  max_value: MyString
+  min_value: MyString
+  output_value: MyString
+  mapping_function_id: 
+
+two:
+  max_value: MyString
+  min_value: MyString
+  output_value: MyString
+  mapping_function_id: 

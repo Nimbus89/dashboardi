@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  constant: false
+  input_key: MyString
+  second_input: MyString
+  function: MyString
+  output_key: MyString
+  project_id: 
+
+two:
+  constant: false
+  input_key: MyString
+  second_input: MyString
+  function: MyString
+  output_key: MyString
+  project_id: 

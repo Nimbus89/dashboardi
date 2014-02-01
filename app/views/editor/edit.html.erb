@@ -16,7 +16,7 @@
 		<div class="header">CHANGE PAGE</div>
 		<div class="pages_inner">
 			<% @page.project.pages.each do |page| %>
-				<div class="page_link"><%= link_to page.name, editor_path(page) %></div>
+				<div class="page_link"><%= link_to page.name, edit_page_path(page) %></div>
 			<% end %>
 		</div>
 	</div>

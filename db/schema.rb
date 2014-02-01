@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124005834) do
+ActiveRecord::Schema.define(version: 20140201025644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "combination_functions", force: true do |t|
+    t.string   "output_key"
+    t.integer  "time_range"
+    t.string   "function"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "combination_functions", ["project_id"], name: "index_combination_functions_on_project_id", using: :btree
+
+  create_table "comparison_functions", force: true do |t|
+    t.boolean  "constant"
+    t.string   "input_key"
+    t.string   "second_input"
+    t.string   "function"
+    t.string   "output_key"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comparison_functions", ["project_id"], name: "index_comparison_functions_on_project_id", using: :btree
 
   create_table "data_source_fields", force: true do |t|
     t.string   "name"
@@ -42,6 +66,26 @@ ActiveRecord::Schema.define(version: 20140124005834) do
 
   add_index "data_sources", ["data_source_type_id"], name: "index_data_sources_on_data_source_type_id", using: :btree
   add_index "data_sources", ["project_id"], name: "index_data_sources_on_project_id", using: :btree
+
+  create_table "input_keys", force: true do |t|
+    t.string   "key"
+    t.integer  "combination_function_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "input_keys", ["combination_function_id"], name: "index_input_keys_on_combination_function_id", using: :btree
+
+  create_table "mapping_functions", force: true do |t|
+    t.string   "input_key"
+    t.string   "output_key"
+    t.string   "default_value"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mapping_functions", ["project_id"], name: "index_mapping_functions_on_project_id", using: :btree
 
   create_table "pages", force: true do |t|
     t.string   "name"
@@ -117,6 +161,17 @@ ActiveRecord::Schema.define(version: 20140124005834) do
   end
 
   add_index "property_types", ["panel_type_id"], name: "index_property_types_on_panel_type_id", using: :btree
+
+  create_table "range_mappings", force: true do |t|
+    t.string   "max_value"
+    t.string   "min_value"
+    t.string   "output_value"
+    t.integer  "mapping_function_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "range_mappings", ["mapping_function_id"], name: "index_range_mappings_on_mapping_function_id", using: :btree
 
   create_table "sse_data_sources", force: true do |t|
     t.string   "address"

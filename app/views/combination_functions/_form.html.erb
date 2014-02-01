@@ -1,0 +1,37 @@
+<%= form_for [@project, @combination_function] do |f| %>
+  <% if @combination_function.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@combination_function.errors.count, "error") %> prohibited this combination_function from being saved:</h2>
+
+      <ul>
+      <% @combination_function.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.label :output_key %><br>
+    <%= f.text_field :output_key %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_range, "Time Range(ms)" %><br>
+    <%= f.number_field :time_range %>
+  </div>
+  <div class="form-group">
+    <%= f.label :function %><br>
+    <%= f.select :function, ["Sum", "Maximum", "Minimum", "Average", "Most Recent"] %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Input Keys" %>
+      <%= f.fields_for :input_keys do |builder| %>
+        <%= render "input_key_fields", f: builder %>
+      <% end %>
+  </div>
+  <%= link_to_add_fields "Add Input Key", f, :input_keys %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
