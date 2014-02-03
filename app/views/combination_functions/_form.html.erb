@@ -14,15 +14,15 @@
 
   <div class="form-group">
     <%= f.label :output_key %><br>
-    <%= f.text_field :output_key %>
+    <%= f.text_field :output_key, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :time_range, "Time Range(ms)" %><br>
-    <%= f.number_field :time_range %>
+    <%= f.number_field :time_range, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :function %><br>
-    <%= f.select :function, ["Sum", "Maximum", "Minimum", "Average", "Most Recent"] %>
+    <%= f.select :function, ["Sum", "Maximum", "Minimum", "Average"], {}, {class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label "Input Keys" %>
@@ -32,6 +32,6 @@
   </div>
   <%= link_to_add_fields "Add Input Key", f, :input_keys %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

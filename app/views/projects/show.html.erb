@@ -125,7 +125,7 @@
     <tr>
       <td>Comparison</td>
       <td>
-        <%= function.output_key %> = key(<%= function.input_key %>) <%= function.function %> 
+        <%= function.output_key %> = key(<%= function.input_key %>) <%= ComparisonFunction::SYMBOLS[function.function] %> 
         <% if ! function.constant %>
           key(<%= function.second_input %>)
         <% else %>
@@ -139,13 +139,9 @@
   <% @project.mapping_functions.each do |function| %>
     <tr>
     <td>Mapping</td>
-    <td> <% function.output_key %> = 
-      <ul>
-        <% function.range_mappings.each do |mapping| %>
-          <li> <%= mapping.min_value %> &lt; <%= function.input_key %> &lt; <%= mapping.max_value %> =&gt; <%= mapping.output_value %></li>
-        <% end %>
-        <li> else =&gt; <%= function.default_value %> </li>
-      </ul>
+    <td>if 
+        <%= raw function.range_mappings.map { |mapping| "( #{mapping.min_value} < key(#{function.input_key}) < #{mapping.max_value} )<div class='result'>#{function.output_key} = #{mapping.output_value}</div>" }.join("elseif") %>
+        else<div class="result"> <%= function.default_value %></div>
     </td>
     <td><%= link_to "Edit", edit_project_mapping_function_path(@project, function), class: "btn btn-info" %></td>
     <td><%= link_to 'Delete', project_mapping_function_path(@project, function), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>

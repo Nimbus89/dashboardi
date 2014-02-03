@@ -11,13 +11,14 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :constant, "Second Input Type" %><br>
-    <%= f.select :constant, options_for_select([["Constant", true],["Key", false]]), {}, {class: "form-control"} %>
-  </div>
+
   <div class="form-group">
     <%= f.label :input_key %><br>
     <%= f.text_field :input_key, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :constant, "Second Input Type" %><br>
+    <%= f.select :constant, options_for_select([["Constant", true],["Key", false]]), {}, {class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :second_input %><br>

@@ -18,32 +18,6 @@ class SseController < ApplicationController
     response.stream.close
   end
 
-  def random
-    project = Project.find(params[:project_id])
-    rand = DataSourceType.find_by name: "random"
-    rand_sources = project.data_sources.where data_source_type_id: rand.id
-    response.headers['Content-Type'] = 'text/event-stream'
-    30.times do
-      rand_sources.each do |source|
-        source.fields['keys'].each do |key|
-          max = source.fields['max'].to_i
-          min = source.fields['min'].to_i
-          if(max < min)
-            temp = max
-            max = min
-            min = temp
-          end
-          rand_num = rand(max - min + 1) + min
-          sendMessage key, rand_num.to_s, "update"
-        end
-      end
-      sleep 0.5
-    end
-  
-  ensure
-    response.stream.close
-  end
-
   def ping
     source = DataSource.find(params[:source_id])
     response.headers['Content-Type'] = 'text/event-stream'

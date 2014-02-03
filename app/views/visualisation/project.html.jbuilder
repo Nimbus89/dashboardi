@@ -11,6 +11,42 @@ json.data_sources do
 	end
 end
 
+json.combination_functions do
+	json.array! @project.combination_functions do |function|
+		json.output_key function.output_key
+		json.time_range function.time_range
+		json.function function.function
+		json.input_keys do
+			json.array! function.input_keys.collect { |key| key.key }
+		end
+	end
+end
+
+json.comparison_functions do
+	json.array! @project.comparison_functions do |function|
+		json.output_key function.output_key
+		json.input_key function.input_key
+		json.function function.function
+		json.constant function.constant
+		json.second_input function.second_input
+	end
+end
+
+json.mapping_functions do
+	json.array! @project.mapping_functions do |function|
+		json.output_key function.output_key
+		json.input_key function.input_key
+		json.default_value function.default_value
+		json.range_mappings do
+			json.array! function.range_mappings do |range_mapping|
+				json.max_value range_mapping.max_value
+				json.min_value range_mapping.min_value
+				json.output_value range_mapping.output_value
+			end
+		end
+	end
+end
+
 json.set! :pages do
 	@project.pages.each do |page|
 		json.set! page.id do

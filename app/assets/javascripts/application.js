@@ -25,7 +25,7 @@ var init = function(){
 	});
 
 	$(".dyn_fields").on("click", ".remove_fields_dyn", function(event){
-		$(this).parent().remove();
+		$(this).closest(".removeable").remove();
 		$(this).remove();
 		event.preventDefault();
 	});

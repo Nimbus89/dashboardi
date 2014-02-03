@@ -1,9 +1,11 @@
 Current Work:==============================================
 
-
-High Priority:==========================================
-
 -Definitions to allow manipulation of incoming data. (Analytics)
+--Mapping Functions needs types added
+--Combination FUnctions time range inplement
+
+-best_in_place stopped working
+
 
 
 

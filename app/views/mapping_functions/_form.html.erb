@@ -24,10 +24,12 @@
     <%= f.text_field :default_value, class: "form-control" %>
   </div>
 
-  <%= f.label "Input Keys"
-  <%= f.fields_for :range_mappings do |builder| %>
-    <%= render 'range_mapping_fields', f: builder %>
-  <% end %>
+  <div class="form-group">
+    <%= f.label "Input Keys" %>
+    <%= f.fields_for :range_mappings do |builder| %>
+      <%= render 'range_mapping_fields', f: builder %>
+    <% end %>
+  </div>
 
   <%= link_to_add_fields "Add Range Mapping", f, :range_mappings %>
 
