@@ -27,6 +27,7 @@ body {
   
   .panel {
     overflow: hidden;
+    color: black;
   }
 
   .valuePanel {
@@ -49,6 +50,26 @@ body {
     img{
         width: 100%;
         height: 100%;
+    }
+  }
+
+  .labelPanel{
+    div{
+      color: black;
+      line-height: 80px;
+      font-weight: bold;
+      font-size: 21px;
+      height: 100%;
+      width:100%;
+      text-align: center;
+    }
+  }
+
+  .PieChartPanel{
+    canvas{
+      width: 100% !important;
+      max-width: 800px;
+      height: auto !important;
     }
   }
 }

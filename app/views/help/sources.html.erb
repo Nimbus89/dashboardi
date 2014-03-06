@@ -1,0 +1,20 @@
+<h1>Data Sources: Help</h1>
+
+<p>Data sources are the ways you can get data into your dashboards. Some are capable of connecting to an applicaiton which has been set up to communicate with dashboardi. Others can gather information on their own.</p>
+
+<p>To set up a new data source, simply open a project and there will be a "new datasource" section, with a dropdown menu you can use to select the type of data source you wish to set up. To understand the forms used to set up a data source, read the section below corresponding to the type of data source you wish to set up:</p>
+
+<h2>Websocket Data Sources</h2>
+<p>If your application supports websocket data streams, then it will be easy to set it up to work with dashboardi. Simply set up a data stream as described in the "developer notes" below. Otherwise, there are many libraries available which may allow your application to support websocket data streaming.</p>
+<p>Websocket data sources only have one attribute: address. This should be the URL of your application's websocket. Usually this is preceeded by "ws://". If your application will be running on the same machine that the dashboard will be running on, then the address will usually be "ws://localhost:XXXX", where XXXX is the port number for your websocket. This will usually be set by your application developer.</p>
+<p><strong>Devloper Notes:</strong> Dashboardi is set up to recognise JSON-format strings sent via websocket. The format which should be used is {key:"XXXX", value: YYYY}, where XXXX is the key you wish to use to identify your data, and YYYY is the data you wish to send. In addition, if your websocket library requires you to set a "protocol" string, set it to "visu". Simply set up your application to send out any data that needs to be visualised in this format whenever it is available.</p>
+
+<h2>Server Sent Events Data Sources</h2>
+<p>If your application supports server sent events, then it will be simple to add support for dashboardi. Otherwise, there are many libraries which can be added to your application in mintes, allowing you to support real-time data streaming.</p>
+<p>Server sent event data sources only have one attribute: address. This should be the URL of your application's Server Sent Events connection. If your application will be running on the same machine that the dashboard will be running on, then the address will usually be "http://localhost:XXXX", where XXXX is the port number for your application. For server sent events, this number is usually 80, 8000, or 8080. This will usually be set by your application developer.</p>
+<p><strong>Devloper Notes:</strong> Server sent events in general require a very particular format. The first line must be of the format "event: "XXXX"\n", where XXXX is the event name. The only event name you need to use in dashboardi is "update" (The event name must be wrapped in escaped double quotes). The second line must be of the format "data: YYYY\n\n", where YYYY is a JSON formatted hash. This hash should be of the following format: {key: XXXX, val: YYYY}, where XXXX is the key you wish to use to identify your data, and YYYY is the data you wish to send.</p>
+
+<h2>HTTP Ping Data Sources</h2>
+<p>HTTP Ping data sources allow you to ping a
+
+<h2>Random Data Sources</h2>

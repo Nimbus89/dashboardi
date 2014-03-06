@@ -8,6 +8,7 @@
 //= require justgauge
 //= require jquery.flot
 //= require jquery.purr
+//= require chart
 
 
 //= require_tree ./templates

@@ -11,7 +11,6 @@ class @Socket
     @id = project.id
     @dataSources = project.data_sources
     @subscriptions = {}
-    @hasRandom = false
 
 
     for dataSource in @dataSources
@@ -30,7 +29,6 @@ class @Socket
           source.onError = (e) =>
             @eHandler.handle("Cannot Connect to SSE source: " + source )
         if dataSource.type is "HTTP ping"
-          @hasRandom = true
           source = new EventSource("/sse/ping/" + dataSource.id)
           source.addEventListener("update", (e) =>
             @process_sse_message(e.data)

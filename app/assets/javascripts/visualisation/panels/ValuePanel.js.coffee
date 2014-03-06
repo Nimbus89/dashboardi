@@ -9,7 +9,7 @@ class @ValuePanel extends @Panel
     @render()
     @socket.add_subscription(json.properties.key, this)
   update: (key, newValue) =>
-    @currentValue = newValue
+    @currentValue = Math.round(newValue * 1000) / 1000
     newHtml = $(@template(@renderHash()))
     @html.replaceWith(newHtml)
     @html = newHtml

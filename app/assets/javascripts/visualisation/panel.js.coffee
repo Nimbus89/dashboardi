@@ -17,14 +17,11 @@ class @Panel
 		$(".page").append(@html)
 	renderHash: =>
 		{x: @x, y: @y, sizeX: @sizeX, sizeY: @sizeY}
-	generateUUID: =>
-		d = new Date().getTime()
-		'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) ->
-		    r = (d + Math.random()*16)%16 | 0
-		    d = Math.floor(d/16)
-		    (c=='x' ? r : (r&0x7|0x8)).toString(16)
-		)
 	mergeHashes: (hash1, hash2) =>
 		for key, item of hash2
 			hash1[key] = item
 		hash1
+	s4: () =>
+  		Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)
+  	generateUUID: () =>
+  		@s4() + @s4() + '-' + @s4() + '-' + @s4() + '-' + @s4() + '-' + @s4() + @s4() + @s4()

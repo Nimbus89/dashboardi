@@ -20,4 +20,14 @@ OpenVisu::Application.routes.draw do
 
   get "websocket/rand3"
   
+  get "help", to: "help#index"
+  get "help/projects", to: "help#projects"
+  get "help/pages", to: "help#pages"
+  get "help/sources", to: "help#sources"
+  get "help/functions", to: "help#functions"
+  get "help/editor", to: "help#editor"
+  get "help/panels", to: "help#panels"
+
+
+
 end

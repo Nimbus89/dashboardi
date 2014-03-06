@@ -13,10 +13,24 @@ class @CombinationFunction
 	update: (key, newValue) =>
 		if(@time_range == 0)
 			@values[key] = newValue
+			@output( @calculate_answer(@generate_values_array()) )
+		else
+			time = new Date().getTime()
+			@values[time] = newValue
 			value_array = []
 			for key, value of @values
 				value_array.push( value )
-			@output( @calculate_answer(value_array) )
+			@output( @calculate_answer(@generate_values_array()) )
+			window.setTimeout(()=>
+				delete @values[time]
+				@output( @calculate_answer(@generate_values_array()) )
+			,@time_range, time)
+	generate_values_array: () =>
+		value_array = []
+		for key, value of @values
+			value_array.push( value )
+		@output( @calculate_answer(value_array) )
+		value_array
 	calculate_answer: (value_array) =>
 		switch @function
 			when "Sum"

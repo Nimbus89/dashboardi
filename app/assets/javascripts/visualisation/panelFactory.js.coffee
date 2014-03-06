@@ -10,4 +10,7 @@ class @PanelFactory
       when "gaugepanel" then new window.GaugePanel(json, @app, @socket)
       when "timeseries" then new window.TimeSeriesPanel(json, @app, @socket)
       when "image" then new window.ImagePanel(json, @app, @socket)
+      when "label" then new window.LabelPanel(json, @app, @socket)
+      when "pie_chart" then new window.PieChartPanel(json, @app, @socket)
+      when "doughnut_chart" then new window.DoughnutChartPanel(json, @app, @socket)
       else alert("Unknown panel type: " + json.type);

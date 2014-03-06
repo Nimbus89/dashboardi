@@ -6,6 +6,7 @@
 //= require gridster
 //= require jquery-ui
 //= require jquery.ui-contextmenu
+//= require spectrum
 
 //= require_tree "./editor"
 
@@ -14,6 +15,7 @@ jQuery(($) ->
 
 	$(".properties").on("click", ".add_fields_dyn", (event) ->
 		$(this).before($(this).data('fields'));
+		$(".properties_form input.color").spectrum();
 		event.preventDefault();
 	)
 
