@@ -20,7 +20,7 @@ class @ImagePanel extends @Panel
 
   update: (key, newValue) =>
     if @srcs[newValue]?
-      @index = (Number)newValue
+      @index = (Number) newValue
     else
       @index = 0
 
