@@ -19,7 +19,7 @@ class @ImagePanel extends @Panel
     @gauge = new JustGage({id: @id, title: @title, min: @min, max: @max})
 
   update: (key, newValue) =>
-    if @srcs[newValue]?
+    if @srcs[((Number) newValue)]?
       @index = (Number) newValue
     else
       @index = 0
