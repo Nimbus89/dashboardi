@@ -1,3 +1,15 @@
 <script>
   var project = <%=raw @project_json %>;
 </script>
+<style>
+	.container{
+		background-color: <%= @project.background_colour%>;
+	}
+	.page{
+		background-color: <%= @project.foreground_colour%>;
+	}
+	.panel{
+		background-color: <%= @project.panel_colour%>;
+		color: <%= @project.text_colour%>;
+	}
+</style>

@@ -88,7 +88,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :date_created, :startpage_id, :last_modified, :description, :private, :screensize_x, :screensize_y, :user_id, pages_attributes: [
+      params.require(:project).permit(:background_colour, :foreground_colour, :panel_colour, :text_colour, :name, :date_created, :startpage_id, :last_modified, :description, :private, :screensize_x, :screensize_y, :user_id, pages_attributes: [
         :id, :name, :_destroy, panels_attributes:[
           :id, :_destroy, :x, :y, :properties
         ]

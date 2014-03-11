@@ -1,3 +1,22 @@
-<div id="<%= dom_id panel %>" data-panelid="<%=panel.id%>" style="width:<%= panel.panel_type.sizex %>px; height:<%= panel.panel_type.sizey %>px; left:<%= panel.x %>px; top:<%= panel.y %>px; position: absolute;" class="panel <%= panel.panel_type.name %>">
-	<%= render partial: "/editor/panels/#{panel.panel_type.name}", locals:{ panel: panel } %>
+<% 
+
+if panel.panel_type.sizex != 0 && panel.panel_type.sizey != 0 then
+	sizex = panel.panel_type.sizex 
+	sizey = panel.panel_type.sizey 
+else 
+	if( panel.properties['width'] != nil && panel.properties['height'] != nil )
+		sizex = panel.properties['width'].to_i * 20
+		sizey = panel.properties['height'].to_i * 20
+	else
+		sizex = panel.properties['size'].to_i * 20
+		sizey = panel.properties['size'].to_i * 20
+	end
+end
+%>
+
+<div id="<%= dom_id panel %>" data-panelid="<%=panel.id%>" style="width:<%= sizex %>px; height:<%= sizey %>px; left:<%= panel.x %>px; top:<%= panel.y %>px; position: absolute;" class="panel <%= panel.panel_type.name %>">
+	<div><strong><%= panel.panel_type.name.capitalize %></strong></div>
+	<% panel.panel_type.panel_fields.each do |field| %>
+		<div><%= field.name.capitalize %>: <%= truncate(panel.properties[field.name].to_s, length:25) %></div>
+	<% end %>
 </div>

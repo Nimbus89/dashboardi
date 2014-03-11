@@ -7,6 +7,11 @@
 </div>
 
 <div class="right_bar">
+
+	<div class="run_now">
+		<%= link_to "Run Now", @page, class: "btn btn-block btn-default btn-lg", target:"_blank"  %>
+	</div>
+
 	<div class="properties">
 		<div class="header">PROPERTIES</div>
 		<div class="properties_form"></div>
@@ -16,7 +21,7 @@
 		<div class="header">CHANGE PAGE</div>
 		<div class="pages_inner">
 			<% @page.project.pages.each do |page| %>
-				<div class="page_link"><%= link_to page.name, edit_page_path(page) %></div>
+				<div class="page_link<%if @page == page%> selected<%end%>"><%= link_to page.name, edit_page_path(page) %></div>
 			<% end %>
 		</div>
 	</div>
@@ -26,7 +31,7 @@
 <div class="header">PALETTE</div>
 	<div class="palette_items">
 	<% @palette.each do |pitem| %>
-	  <div class="palette_item" data-paneltype="<%= pitem.id %>"><%= render_palette_item pitem %></div>
+	  <div class="palette_item" data-paneltype="<%= pitem.id %>" data-content="<img src='<%= image_path('panels/' + pitem.name + '.png') %>' alt=''></img>"> <%= render_palette_item pitem %></div>
 	<% end %>
 	</div>
 </div>

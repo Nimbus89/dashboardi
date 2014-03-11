@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306184947) do
+ActiveRecord::Schema.define(version: 20140308234409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140306184947) do
     t.integer  "panel_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "default_value"
   end
 
   add_index "panel_fields", ["panel_type_id"], name: "index_panel_fields_on_panel_type_id", using: :btree
@@ -138,9 +139,13 @@ ActiveRecord::Schema.define(version: 20140306184947) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "startpage_id"
-    t.integer  "screensize_x",  default: 800
-    t.integer  "screensize_y",  default: 600
+    t.integer  "screensize_x",      default: 800
+    t.integer  "screensize_y",      default: 600
     t.boolean  "private"
+    t.string   "background_colour", default: "black"
+    t.string   "foreground_colour", default: "grey"
+    t.string   "panel_colour",      default: "white"
+    t.string   "text_colour",       default: "black"
   end
 
   create_table "properties", force: true do |t|

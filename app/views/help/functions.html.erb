@@ -1,3 +1,51 @@
 <h1>Functions: Help</h1>
 
-<p></p>
+<p>Functions allow you to manipulate data. Either the output of other functions, or the data delivered by data sources can be used as the input of functions. New functions can be added to a project from that project's page. Dashboardi currently offers three types of functions:</p>
+
+<h2>Combination Functions</h2>
+
+<p>Combination functions allow you to combine multiple points of data into a single value. You are able to get the Sum, Maximum, Minimum or Average of a data set. Additionally, you can combine either a time range of values, or the most recent value from a list of keys.</p>
+
+<p>The attributes you can set on a combination function are as follows:</p>
+
+<ul>
+<li><strong>Output Key: </strong> This is the key on which the result of the function will be published. Functions and panels can subscribe to this key.</li>
+<li><strong>Time Range: </strong> The time range in milliseconds to include values for. Setting this to, for example, 5000 would mean that the output of this function would combine all values which have come in over the last five seconds. Set the time range to 0 if you wish for the data set to only include the most recent value from each key.</li>
+<li><strong>Function: </strong> This select box allows you to select which function out of Maximum, Minimum, Average and Sum you wish to be applied to the data set. </li>
+<li><strong>Input Keys: </strong> This sets the keys to listen to for new data. If a message comes in from a data source with this key or a function outputs with this key, the function will be recalculated, adding the new value to the data set.</li>
+</ul>
+
+<h2>Comparison Functions</h2>
+
+<p>Comparison functions allow you to compare two values and return a boolean (true/false value). You can compare either two dynamic value (from data sources/ functions), or one dynamic value and a constant, set as an attribute of the function.</p>
+
+<p>The attributes you can set on a comparison function are as follows:</p>
+
+<ul>
+<li><strong>Output Key: </strong> This is the key on which the result of the function will be published. Functions and panels can subscribe to this key.</li>
+<li><strong>Function: </strong> This select box allows you to select which function you wish to be applied. </li>
+<li><strong>Input Key: </strong> This sets the keys to listen to for new data. If a message comes in from a data source with this key or a function outputs with this key, the function will be recalculated, adding the new value to the data set.</li>
+<li><strong>Second Input Type: </strong> This allows you to set whether the "second input" attribute should be treated as a constant to be compared to, or a seoncd key to listen to.</li>
+<li><strong>Second Input: </strong> See above.</li>
+</ul>
+
+
+<h2>Mapping Functions</h2>
+
+<p>Mapping functions allow you to map ranges of values to single values. For example:</p>
+<ul>
+	<li>if the input is between 0 and 100, output 21</li>
+	<li>if the input is between 101 and 200, output 22</li>
+	<li>if the input is between 201 and 500, output 23</li>
+	<li>if the input is between 501 and 10000, output 24</li>
+	<li>otherwise, output 20</li>
+</ul>
+
+<p>The attributes you can set for mapping functions are as follows:</p>
+
+<ul>
+	<li><strong>Output Key: </strong> This is the key on which the result of the function will be published. Functions and panels can subscribe to this key.</li>
+	<li><strong>Input Key: </strong> This sets the keys to listen to for new data. If a message comes in from a data source with this key or a function outputs with this key, the function will be recalculated, adding the new value to the data set.</li>
+	<li><strong>Default Value: </strong> The value to be output if the input does not match any range mapping.</li>
+	<li><strong>Range Mappings: </strong> Each range mapping has a max value, min value and output value. The max and min values are compared to the input. If the input is within these values, then the function outputs the output value.</li>
+</ul>

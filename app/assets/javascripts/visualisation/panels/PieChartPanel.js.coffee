@@ -3,7 +3,12 @@ class @PieChartPanel extends @Panel
     super(json, app, socket, 'PieChartPanel')
 
     @keys = json.properties.keys
-    @colours = json.properties.colours || 0
+
+    if !@keys?
+      throw "No keys set for Pie Chart Panel."
+
+
+    @colours = json.properties.colours || []
     @id = @generateUUID()
     @values = {}
     for key in @keys

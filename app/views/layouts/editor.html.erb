@@ -16,6 +16,11 @@
       <% end %>
       <%= yield %>
     </div>
+<div id="preloadedImages">
+  <% @palette.each do |pitem| %>
+    <img src='<%= image_path('panels/' + pitem.name + '.png') %>' alt=''></img>
+  <% end %>
 
+</div>
 </body>
 </html>

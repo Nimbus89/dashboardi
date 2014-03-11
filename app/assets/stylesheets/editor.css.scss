@@ -5,12 +5,14 @@
 @import 'bootstrap';
 @import "font-awesome";
 @import "spectrum";
+@import "jquery-ui";
 
 $bottom_panel_height: 200px;
 $right_side_panel_width: 300px;
 $header-height: 40px;
 $text_field_label_width: 100px;
 $page_list_height: 300px;
+$run_now_pane_height: 45px;
 
 @mixin bottom_panel {
 	position: fixed;
@@ -68,7 +70,7 @@ $page_list_height: 300px;
 }
 
 .properties {
-	top: 0;
+	top: $run_now_pane_height;
 	left: 0;
 	right: 0;
 	bottom: $page_list_height;
@@ -89,6 +91,15 @@ $page_list_height: 300px;
 	}
 }
 
+.run_now {
+	top:0;
+	position: absolute;
+	bottom: $run_now_pane_height;
+	left: 0;
+	right: 0;
+	background-color: #5A5A5A;
+}
+
 .pages {
 	height: $page_list_height;
 	bottom: 0;
@@ -104,7 +115,7 @@ $page_list_height: 300px;
 		font-size: 150%;
 		color: white;
 	}
-	.page_link a:hover{
+	.page_link a:hover, .page_link.selected a{
 		background-color: rgba(255,255,255,0.3);
 	}
 }
@@ -187,4 +198,8 @@ legend{
 	border: 0;
 	margin: 0;
 	padding: 0;
+}
+
+#preloadedImages {
+	display: none;
 }

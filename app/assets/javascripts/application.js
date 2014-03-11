@@ -16,6 +16,7 @@
 //= require underscore
 //= require best_in_place
 //= require best_in_place.purr
+//= require spectrum
 
 var init = function(){
 	$(".dyn_fields").on("click", ".add_fields_dyn", function(event){
@@ -43,6 +44,8 @@ var init = function(){
 	});
 
 	jQuery(".best_in_place").best_in_place()
+
+	$("input.color").spectrum();
 };
 
 jQuery(init);

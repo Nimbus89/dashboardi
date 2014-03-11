@@ -37,6 +37,7 @@ class @ApplicationController
 		})
 	bind_panels: =>
 		self = this
+		$(".workspace .panel").off("dragstop click")
 		$(".workspace .panel").draggable({ grid: [20,20], containment: "parent" })
 		$(".workspace .panel").on("dragstop", (event, ui) ->
 			id = $(this).data("panelid")

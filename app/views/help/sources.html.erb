@@ -15,6 +15,18 @@
 <p><strong>Devloper Notes:</strong> Server sent events in general require a very particular format. The first line must be of the format "event: "XXXX"\n", where XXXX is the event name. The only event name you need to use in dashboardi is "update" (The event name must be wrapped in escaped double quotes). The second line must be of the format "data: YYYY\n\n", where YYYY is a JSON formatted hash. This hash should be of the following format: {key: XXXX, val: YYYY}, where XXXX is the key you wish to use to identify your data, and YYYY is the data you wish to send.</p>
 
 <h2>HTTP Ping Data Sources</h2>
-<p>HTTP Ping data sources allow you to ping a
+<p>HTTP Ping data sources allow you to ping a web server and return a boolean stating whether the server is up or not. To set up this data source, simply enter as many addresses (Fully, including "http://www...") as you wish. Then, when setting up panels to use the data from these pings, use the same address as the key.</p>
+
+<p>The HTTP ping data source pings once every 5 seconds.</p>
 
 <h2>Random Data Sources</h2>
+
+<p>The random data source is included in Dashboardi for ease of development. It allows you to build and test a dashboard without having your data source available or running. The steps to set up a random data source are as follows:</p>
+
+<p>You must set the output type of the random data source. This can be set to integer, float (real numbers), or boolean (true/false). If set to boolean, step size, max and min are ignored.</p>
+
+<p>You may set as many keys as you wish. Each key will be randomly generated seperately. Each key you add efectively acts like a new, seperate data source.</p>
+
+<p>You must set a step size. This means that each value randomly generated will be at most the step size away fromthe previous value generated. This allows you to use the random data source to generate natural-looking "random-walks".</p>
+
+<p>You must set a minimum and maximum value. All values generated will fall between these two values, inclusive.</p>

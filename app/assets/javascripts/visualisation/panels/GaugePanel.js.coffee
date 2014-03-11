@@ -1,6 +1,12 @@
 class @GaugePanel extends @Panel
   constructor: (json, app, socket) ->
     super(json, app, socket, 'GaugePanel')
+
+    @key = json.properties.key
+
+    if !@key?
+      throw "No key set for gauge panel."
+
     @gauge = null
 
     @title = json.properties.title || "Title"
@@ -10,7 +16,7 @@ class @GaugePanel extends @Panel
     @id = @generateUUID()
 
     @render()
-    @socket.add_subscription(json.properties.key, this)
+    @socket.add_subscription(@key, this)
 
   render: =>
     super

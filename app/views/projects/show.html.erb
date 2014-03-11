@@ -163,5 +163,22 @@
 <%= link_to 'New Mapping function', new_project_mapping_function_path(@project), class: "btn btn-primary" %>
 <%= link_to 'New Combination function', new_project_combination_function_path(@project), class: "btn btn-primary" %>
 
-
+<h2>Styles</h2>
+<%= form_for @project do |f| %>
+<div class="form-group">
+  <%= f.label :background_colour %>
+  <%= f.text_field :background_colour, class: "color", type: "color" %>
+</div><div class="form-group">
+  <%= f.label :foreground_colour %>
+  <%= f.text_field :foreground_colour, class: "color", type: "color" %>
+</div><div class="form-group">
+  <%= f.label :panel_colour %>
+  <%= f.text_field :panel_colour, class: "color", type: "color" %>
+</div><div class="form-group">
+  <%= f.label :text_colour %>
+  <%= f.text_field :text_colour, class: "color", type: "color" %>
+</div><div class="form-group">
+  <%= f.submit "Update Styles", class: "btn btn-info" %>
+</div>
+<% end %>
 <p id="notice"><%= notice %></p>

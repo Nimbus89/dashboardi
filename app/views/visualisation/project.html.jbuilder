@@ -1,4 +1,4 @@
-json.extract! @project, :data_sources, :id
+json.extract! @project, :data_sources, :id, :background_colour, :foreground_colour, :panel_colour, :text_colour
 json.startpage_id @startpage_id
 json.screensize_x @project.screensize_x
 json.screensize_y @project.screensize_y

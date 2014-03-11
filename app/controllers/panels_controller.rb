@@ -33,6 +33,12 @@ class PanelsController < ApplicationController
   def create
     @panel = Panel.new(panel_params)
 
+    @panel.panel_type.panel_fields.each do |panel_field|
+      if panel_field.default_value != nil
+        @panel.properties[panel_field.name] = panel_field.default_value
+      end
+    end
+
     respond_to do |format|
       if @panel.save
         format.html { redirect_to @panel, notice: 'Panel was successfully created.' }

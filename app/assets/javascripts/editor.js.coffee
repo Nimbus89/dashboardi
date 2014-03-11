@@ -24,5 +24,16 @@ jQuery(($) ->
 		$(this).remove();
 		event.preventDefault();
 	)
+
+	$(".properties").on("blur", "input", (event) ->
+		$(this).closest("form").submit()
+	)
+
+	content = ->
+        element = $( this )
+        element.data("content")
+
+    $( document ).tooltip({items: ".palette_item", content: content, show:false, hide:false, relative:true, position: {my: "left bottom", at: "right top"}})
+
 	window.app = new ApplicationController()
 )

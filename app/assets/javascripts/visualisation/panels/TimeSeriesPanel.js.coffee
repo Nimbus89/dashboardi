@@ -1,7 +1,11 @@
 class @TimeSeriesPanel extends @Panel
 	constructor: (json, app, socket) ->
 		super(json, app, socket, "TimeSeriesPanel")
-		@keys = json.properties.keys || []
+		@keys = json.properties.keys
+
+		if !@keys?
+			throw "No keys set for Time Series Panel."
+
 		@plot = null
 		@inDatas = []
 		@datas = []

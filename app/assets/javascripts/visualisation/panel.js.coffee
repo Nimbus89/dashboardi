@@ -7,8 +7,18 @@ class @Panel
 
 		@x = json.x
 		@y = json.y
-		@sizeX = json.sizeX
-		@sizeY = json.sizeY
+
+		if json.sizeX == 0 && json.sizeY == 0
+			if json.properties['width']? && json.properties['height']?
+				@sizeX = ((Number) json.properties['width']) * 20
+				@sizeY = ((Number) json.properties['height']) * 20
+			else
+				@sizeX = ((Number) json.properties['size']) * 20
+				@sizeY = ((Number) json.properties['size']) * 20
+		else
+			@sizeX = json.sizeX
+			@sizeY = json.sizeY
+			
 
 
 		@template = HandlebarsTemplates[templateName]

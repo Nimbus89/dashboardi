@@ -1,10 +1,18 @@
 class @ImagePanel extends @Panel
   constructor: (json, app, socket) ->
     super(json, app, socket, 'ImagePanel')
-    @key = 0
+
+    @key = json.properties.key
+
+    @index = 0
     @srcs = json.properties.images
+
+    if !@srcs?
+      throw "No images set for image panel."
+      
     @render()
-    @socket.add_subscription(json.properties.key, this)
+    if @key?
+      @socket.add_subscription(@key, this)
 
   render: =>
     super
@@ -12,13 +20,13 @@ class @ImagePanel extends @Panel
 
   update: (key, newValue) =>
     if @srcs[newValue]?
-      @key = newValue
+      @index = newValue
     else
-      @key = 0
+      @index = 0
 
     @html.html(@template(@renderHash()))
     newHtml = $(@template(@renderHash()))
     @html.replaceWith(newHtml)
     @html = newHtml
   renderHash: =>
-    @mergeHashes super(), {src: @srcs[@key]}
+    @mergeHashes super(), {src: @srcs[@index]}

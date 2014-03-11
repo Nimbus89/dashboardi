@@ -3,7 +3,12 @@ class @DoughnutChartPanel extends @Panel
     super(json, app, socket, 'DoughnutChartPanel')
 
     @keys = json.properties.keys
-    @colours = json.properties.colours || 0
+
+    if !@keys?
+      throw "No keys set for doughnut panel."
+
+    
+    @colours = json.properties.colours || []
     @id = @generateUUID()
     @values = {}
     for key in @keys

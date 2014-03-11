@@ -2,17 +2,125 @@
 
 <p>Panels are the individual tiles which make up the pages of a dashboard.</p>
 
+<h2>Common Properties</h2>
+<p>Some properties appear in multiple types of panels.</p>
+<ul>
+<li><strong>Key/Keys:</strong> Keys are used by panels to listen for data. For a simple panel such as a gauge panel, there is only one key. Every time a message comes in from a data source or function with that key, the panel will be updated with the new value. Other panels, such as the pie chart, listen to multiple keys. In the case of the pie chart, for example, there would be one key for every section of the pie.</li>
+<li><strong>Width/Height/Size:</strong> These attributes are used to resize panels. agenerally speaking, width and height are present when they can be set independantly, and size is present when widht depends on height or vice verse (For example, some panels must be square). In general, adding 1 to one of these properties increases the dimension by 20 pixels.</li>
+</ul>
+
 <h2>Value Panels</h2>
-<p></p>
+<p>Simple panels for displaying numerical data. They cannot be resized. Takes the value provided by the key property and displays it.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Key:</strong> See Above.</li>
+<li><strong>Unit:</strong> Optional. A small amount of text, shown as a subscript to the main value.</li>
+<li><strong>Title:</strong> Optional. A small amount of text, shown in bold above the main value.</li>
+</ul>
 
 <h2>Gauge Panels</h2>
-<p></p>
+<p>Simple panels for displaying numerical data. Shows a gauge of the value provided by the key property.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Key:</strong> See Above.</li>
+<li><strong>Min:</strong> The lowest point of the gauge.</li>
+<li><strong>Max:</strong> The highest point of the gauge.</li>
+<li><strong>Title:</strong> Optional. A small amount of text, shown in bold above the gauge.</li>
+<li><strong>Size:</strong> See above.</li>
+</ul>
 
 <h2>Image Panels</h2>
-<p></p>
+<p>Image panels allow you to display one of several images, depending on the value of the input provided by the key value. Can also allow you to show a static image if the key is left empty.</p>
+<p>The image panel has many image properties. It will select one of these to display, based on the most recent value provided by the key property. i.e. It will show the first image if the value is 1, the second image if the value is 2, etc.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Key:</strong> See Above.</li>
+<li><strong>Size:</strong> See above.</li>
+<li><strong>Images:</strong> The list of images which will be displayed depending on the value provided by the key property. Simply provide a URL for each image.</li>
+</ul>
+
 
 <h2>Time Series Panels</h2>
-<p></p>
+<p>Time series panels provide you with a way to show a line graph of values over time.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Keys:</strong> See Above. One per line.</li>
+<li><strong>Width:</strong> See above.</li>
+<li><strong>Height:</strong> See above.</li>
+<li><strong>Ymax &amp; Ymin:</strong> The maximum and minimum values of the Y axis.</li>
+<li><strong>Refresh Rate:</strong> The delay in milliseconds between updates of the graph.</li>
+<li><strong>Resolution:</strong> The amound of points shown by the graph.</li>
+</ul>
+
+
+
 
 <h2>Nav Button Panels</h2>
-<p></p>
+<p>Provides a button which allows a viewer to change to a different page.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Link Text:</strong> The text to be displayed on the button.</li>
+<li><strong>Navagate To:</strong> The page to be shown when the user clicks the button.</li>
+<li><strong>Width:</strong> See above.</li>
+<li><strong>Height:</strong> See above.</li>
+</ul>
+
+<h2>Label Panels</h2>
+<p>A simple text panel. Can be used to identify other panels within the dashboard, or provide simple text information.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Default Text:</strong> The text to be shown in the label.</li>
+<li><strong>Key:</strong> See above. Optional. Allows the text to be set from a datasource/function.</li>
+<li><strong>Width:</strong> See above.</li>
+<li><strong>Height:</strong> See above.</li>
+</ul>
+
+
+<h2>Bar Chart Panels</h2>
+<p>A panel which displays a bar chart.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Colour:</strong> The colour of the bars in the chart.</li>
+<li><strong>Labels: The label for each bar of the chart. Will default to the key name if omitted.</strong> </li>
+<li><strong>Keys:</strong> See Above.</li>
+<li><strong>Colour:</strong> </li>
+<li><strong>Width:</strong> See above.</li>
+<li><strong>Height:</strong> See above.</li>
+</ul>
+
+<h2>Radar Chart Panels</h2>
+<p>A panel which displays a radar chart.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Colour:</strong> The colour of the bars in the chart.</li>
+<li><strong>Labels: The label for each bar of the chart. Will default to the key name if omitted.</strong> </li>
+<li><strong>Keys:</strong> See Above.</li>
+<li><strong>Size:</strong> See above.</li>
+</ul>
+
+<h2>Polar Chart Panels</h2>
+<p>A panel which displays a radar chart.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Colours:</strong> The colour for each cone of the polar chart.</li>
+<li><strong>Keys:</strong> See Above.</li>
+<li><strong>Size:</strong> See above.</li>
+</ul>
+
+<h2>Pie chart Panels</h2>
+<p>A panel which displays a pie chart.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Colours:</strong> The colour for each cone of the polar chart.</li>
+<li><strong>Keys:</strong> See Above.</li>
+<li><strong>Size:</strong> See above.</li>
+</ul>
+
+<h2>Pie chart Panels</h2>
+<p>A panel which displays a doughnut chart.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Colours:</strong> The colour for each cone of the polar chart.</li>
+<li><strong>Keys:</strong> See Above.</li>
+<li><strong>Size:</strong> See above.</li>
+</ul>
