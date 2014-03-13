@@ -69,7 +69,7 @@ class PagesController < ApplicationController
 
     def check_public_user
       if @page.project.private
-        fail "Wrong User" unless current_user == Project.find(params[:project_id]).user
+        fail "Wrong User" unless current_user == @page.project.user
       end
     end
 
