@@ -17,7 +17,7 @@ class @TimeSeriesPanel extends @Panel
 		@yMax = json.properties.ymax
 		@yMin = json.properties.ymin
 
-		@options.yaxis = {min: @yMin, max: @yMax}
+		@options.yaxis = {min: @yMin, max: @yMax, legend: {show:true}}
 
 		@render()
 
@@ -57,5 +57,5 @@ class @TimeSeriesPanel extends @Panel
 		for key in @keys
 			res = []
 			res.push([i, point]) for point, i in @datas[key]
-			lines.push(res);
+			lines.push({data: res, label: key});
 		lines
