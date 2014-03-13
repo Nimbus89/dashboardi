@@ -23,18 +23,12 @@ body {
   background-color: gray;
   margin: 0;
   text-align: left;
-
-  span {
-    background-color: white;
-  }
   
   .panel {
     overflow: hidden;
-    color: black;
   }
 
   .valuePanel {
-    color: black;
     text-align: center;
     .title{font-size:300%;}
     .unit{font-size:70%;}
@@ -58,7 +52,6 @@ body {
 
   .labelPanel{
     div{
-      color: black;
       line-height: 80px;
       font-weight: bold;
       font-size: 21px;
