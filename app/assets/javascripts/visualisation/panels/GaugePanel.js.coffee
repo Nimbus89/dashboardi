@@ -15,12 +15,14 @@ class @GaugePanel extends @Panel
 
     @id = @generateUUID()
 
+    @color = $(".panel").css("color")
+
     @render()
     @socket.add_subscription(@key, this)
 
   render: =>
     super
-    @gauge = new JustGage({id: @id, title: @title, min: @min, max: @max})
+    @gauge = new JustGage({id: @id, title: @title, min: @min, max: @max, valueFontColor:@color, titleFontColor:@color, labelFontColor:@color})
 
   update: (key, newValue) =>
     @gauge.refresh(newValue)
