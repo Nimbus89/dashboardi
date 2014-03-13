@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :update, :edit, :destroy]
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:update, :edit, :destroy]
 
   before_filter :check_user, only: [:update, :edit, :destroy]
 
