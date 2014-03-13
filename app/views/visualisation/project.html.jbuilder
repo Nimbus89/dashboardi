@@ -57,6 +57,8 @@ json.set! :pages do
 				page.panels.each do |panel|
 					json.set! panel.id do
 						json.id panel.id
+						json.text_colour @project.text_colour
+						json.background_colour @project.panel_colour
 						json.(panel, :x, :y)
 						json.sizeX panel.panel_type.sizex
 						json.sizeY panel.panel_type.sizey

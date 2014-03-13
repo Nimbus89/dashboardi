@@ -15,7 +15,7 @@ class @GaugePanel extends @Panel
 
     @id = @generateUUID()
 
-    @color = $(".panel").css("color")
+    @color = json.text_colour
 
     @render()
     @socket.add_subscription(@key, this)
