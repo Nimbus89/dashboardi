@@ -2,48 +2,38 @@ require 'test_helper'
 
 class PanelsControllerTest < ActionController::TestCase
   setup do
-    @panel = panels(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:panels)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
+    @panel = panels(:panels_001)
   end
 
   test "should create panel" do
     assert_difference('Panel.count') do
-      post :create, panel: {  }
+      post :create, format: 'js', panel: { x: @panel.x, y: @panel.y, page_id: @panel.page_id, panel_type_id: @panel.panel_type_id }
     end
 
     assert_redirected_to panel_path(assigns(:panel))
+
   end
 
   test "should show panel" do
-    get :show, id: @panel
+    get :show, format: 'js', id: @panel
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @panel
+    get :edit, format: 'js', id: @panel
     assert_response :success
   end
 
   test "should update panel" do
-    patch :update, id: @panel, panel: {  }
-    assert_redirected_to panel_path(assigns(:panel))
+    patch :update, format: 'js', id: @panel, panel: { x: @panel.x, y: @panel.y, page_id: @panel.page, panel_type_id: @panel.panel_type, properties: @panel.properties }
+    assert_response :success
   end
 
   test "should destroy panel" do
     assert_difference('Panel.count', -1) do
-      delete :destroy, id: @panel
+      delete :destroy, format: 'js', id: @panel
     end
 
-    assert_redirected_to panels_path
+    assert_response :success
   end
 end

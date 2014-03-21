@@ -1,9 +1,25 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  key: MyString
-  combination_function_id: 
-
-two:
-  key: MyString
-  combination_function_id: 
+---
+input_keys_001:
+  id: '2'
+  key: key1
+  combination_function_id: '4'
+  created_at: '2014-02-01 20:00:08.140692'
+  updated_at: '2014-02-01 20:00:08.140692'
+input_keys_002:
+  id: '3'
+  key: key1
+  combination_function_id: '5'
+  created_at: '2014-02-02 05:42:05.407555'
+  updated_at: '2014-02-02 05:42:05.407555'
+input_keys_003:
+  id: '5'
+  key: key1
+  combination_function_id: '6'
+  created_at: '2014-02-03 04:18:06.128798'
+  updated_at: '2014-02-03 04:18:06.128798'
+input_keys_004:
+  id: '6'
+  key: key2
+  combination_function_id: '6'
+  created_at: '2014-02-03 04:18:06.132882'
+  updated_at: '2014-02-03 04:18:06.132882'

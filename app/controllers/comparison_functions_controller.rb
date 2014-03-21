@@ -1,18 +1,6 @@
 class ComparisonFunctionsController < ApplicationController
   before_action :set_project
-  before_action :set_comparison_function, only: [:show, :edit, :update, :destroy]
-
-
-  # GET /comparison_functions
-  # GET /comparison_functions.json
-  def index
-    @comparison_functions = @project.comparison_functions.all
-  end
-
-  # GET /comparison_functions/1
-  # GET /comparison_functions/1.json
-  def show
-  end
+  before_action :set_comparison_function, only: [:edit, :update, :destroy]
 
   # GET /comparison_functions/new
   def new

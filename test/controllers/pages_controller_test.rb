@@ -2,26 +2,15 @@ require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
   setup do
-    @page = pages(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:pages)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
+    @page = pages(:pages_001)
   end
 
   test "should create page" do
     assert_difference('Page.count') do
-      post :create, page: { name: @page.name }
+      post :create, page: { name: @page.name  + "_new", project_id: @project }
     end
 
-    assert_redirected_to page_path(assigns(:page))
+    assert_redirected_to project_path(@project)
   end
 
   test "should show page" do
@@ -44,6 +33,6 @@ class PagesControllerTest < ActionController::TestCase
       delete :destroy, id: @page
     end
 
-    assert_redirected_to pages_path
+    assert_redirected_to project_path(@project)
   end
 end

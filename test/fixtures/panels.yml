@@ -1,9 +1,512 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  x: MyString
-  'y': MyString
-
-two:
-  x: MyString
-  'y': MyString
+---
+panels_001:
+  id: '64'
+  x: '880'
+  y: '460'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:26.891135'
+  updated_at: '2014-03-09 03:50:51.880018'
+  panel_type_id: '15'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '8'
+    keys:
+    - key1
+    - key2
+panels_002:
+  id: '79'
+  x: '520'
+  y: '20'
+  page_id: '3'
+  created_at: '2014-03-11 09:15:59.735309'
+  updated_at: '2014-03-11 09:16:53.496988'
+  panel_type_id: '14'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '12'
+    colour: '#ca3737'
+    labels:
+    - Sheep
+    - Bricks
+    - Wood
+    keys:
+    - key1
+    - key2
+    - key3
+panels_003:
+  id: '57'
+  x: '20'
+  y: '320'
+  page_id: '1'
+  created_at: '2014-03-09 03:26:56.687033'
+  updated_at: '2014-03-09 03:55:12.299891'
+  panel_type_id: '4'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '16'
+    width: '20'
+    keys:
+    - key1
+    - key2
+    refreshRate: '100'
+    resolution: '100'
+    ymin: '0'
+    ymax: '100'
+panels_004:
+  id: '82'
+  x: '900'
+  y: '440'
+  page_id: '3'
+  created_at: '2014-03-11 09:17:21.039376'
+  updated_at: '2014-03-11 09:47:06.872985'
+  panel_type_id: '8'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '16'
+    colours:
+    - '#ff0000'
+    - '#def700'
+    - '#04ff00'
+    keys:
+    - key1
+    - key2
+    - key3
+panels_005:
+  id: '85'
+  x: '140'
+  y: '200'
+  page_id: '4'
+  created_at: '2014-03-11 12:13:07.25896'
+  updated_at: '2014-03-11 12:14:30.483106'
+  panel_type_id: '1'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    key: key1
+    unit: ''
+    title: ''
+panels_006:
+  id: '60'
+  x: '540'
+  y: '280'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:08.764278'
+  updated_at: '2014-03-09 04:11:33.141588'
+  panel_type_id: '14'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '13'
+    colour: '#0083ff'
+    labels:
+    - asdf
+    keys:
+    - key1
+    - key2
+panels_007:
+  id: '62'
+  x: '840'
+  y: '40'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:20.243448'
+  updated_at: '2014-03-09 04:45:16.859342'
+  panel_type_id: '8'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '11'
+    keys:
+    - key1
+    - key2
+panels_008:
+  id: '61'
+  x: '460'
+  y: '60'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:11.756795'
+  updated_at: '2014-03-09 04:45:18.781238'
+  panel_type_id: '7'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '8'
+    keys:
+    - key1
+    - key2
+panels_009:
+  id: '59'
+  x: '1260'
+  y: '40'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:05.06995'
+  updated_at: '2014-03-09 04:45:26.002495'
+  panel_type_id: '5'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '10'
+    key: ''
+panels_010:
+  id: '65'
+  x: '100'
+  y: '440'
+  page_id: '2'
+  created_at: '2014-03-09 05:45:31.030818'
+  updated_at: '2014-03-09 05:45:38.004118'
+  panel_type_id: '6'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '4'
+    width: '9'
+    default_text: ''
+    key: asdfasdfsadfasdfasfsadfas
+panels_011:
+  id: '77'
+  x: '300'
+  y: '20'
+  page_id: '3'
+  created_at: '2014-03-11 09:14:41.497436'
+  updated_at: '2014-03-11 09:15:10.02488'
+  panel_type_id: '6'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '4'
+    width: '10'
+    default_text: Server Status
+    key: ''
+panels_012:
+  id: '76'
+  x: '300'
+  y: '120'
+  page_id: '3'
+  created_at: '2014-03-11 08:54:50.553354'
+  updated_at: '2014-03-11 09:15:11.404941'
+  panel_type_id: '5'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '10'
+    images:
+    - http://individual.icons-land.com/IconsPreview/BaseSoftware/PNG/256x256/IndicatorRound_Green_Off.png
+    - http://individual.icons-land.com/IconsPreview/BaseSoftware/PNG/256x256/IndicatorRound_Red_On.png
+    - http://airgotireinflation.com/wp-content/uploads/2013/05/warning-indicator-light.png
+    key: imgkey
+panels_013:
+  id: '66'
+  x: '360'
+  y: '420'
+  page_id: '2'
+  created_at: '2014-03-09 05:45:32.488752'
+  updated_at: '2014-03-09 06:38:54.445505'
+  panel_type_id: '6'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '4'
+    width: '9'
+    default_text: ''
+    key: http://www.google.com
+panels_014:
+  id: '67'
+  x: '580'
+  y: '420'
+  page_id: '2'
+  created_at: '2014-03-11 06:08:50.188495'
+  updated_at: '2014-03-11 06:08:50.188495'
+  panel_type_id: '1'
+  properties: |
+    --- {}
+panels_015:
+  id: '68'
+  x: '980'
+  y: '500'
+  page_id: '2'
+  created_at: '2014-03-11 06:11:58.978281'
+  updated_at: '2014-03-11 06:11:58.978281'
+  panel_type_id: '2'
+  properties: |
+    ---
+    size: '8'
+panels_016:
+  id: '69'
+  x: '960'
+  y: '300'
+  page_id: '2'
+  created_at: '2014-03-11 06:30:19.937202'
+  updated_at: '2014-03-11 06:30:19.937202'
+  panel_type_id: '5'
+  properties: |
+    ---
+    height: '10'
+    width: '10'
+panels_017:
+  id: '70'
+  x: '640'
+  y: '60'
+  page_id: '2'
+  created_at: '2014-03-11 06:35:16.346671'
+  updated_at: '2014-03-11 06:35:18.6272'
+  panel_type_id: '4'
+  properties: |
+    ---
+    height: '16'
+    width: '28'
+panels_018:
+  id: '71'
+  x: '380'
+  y: '580'
+  page_id: '2'
+  created_at: '2014-03-11 06:42:27.499754'
+  updated_at: '2014-03-11 06:42:27.499754'
+  panel_type_id: '3'
+  properties: |
+    ---
+    height: '4'
+    width: '8'
+panels_019:
+  id: '72'
+  x: '1240'
+  y: '440'
+  page_id: '2'
+  created_at: '2014-03-11 08:20:07.170366'
+  updated_at: '2014-03-11 08:20:07.170366'
+  panel_type_id: '9'
+  properties: |
+    ---
+    size: '8'
+panels_020:
+  id: '73'
+  x: '180'
+  y: '540'
+  page_id: '2'
+  created_at: '2014-03-11 08:20:49.135358'
+  updated_at: '2014-03-11 08:20:49.135358'
+  panel_type_id: '8'
+  properties: |
+    ---
+    size: '8'
+panels_021:
+  id: '74'
+  x: '360'
+  y: '560'
+  page_id: '2'
+  created_at: '2014-03-11 08:20:51.713632'
+  updated_at: '2014-03-11 08:20:51.713632'
+  panel_type_id: '15'
+  properties: |
+    ---
+    size: '8'
+panels_022:
+  id: '88'
+  x: '800'
+  y: '300'
+  page_id: '4'
+  created_at: '2014-03-11 12:13:17.199546'
+  updated_at: '2014-03-11 12:13:53.993632'
+  panel_type_id: '5'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '10'
+    images:
+    - http://www.sequoiaorange.com/images/navel.jpg
+    - http://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg
+    key: comp
+panels_023:
+  id: '78'
+  x: '20'
+  y: '380'
+  page_id: '3'
+  created_at: '2014-03-11 09:15:19.837769'
+  updated_at: '2014-03-11 09:36:13.868667'
+  panel_type_id: '4'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '16'
+    width: '28'
+    keys:
+    - key1
+    - key2
+    - key3
+    refreshRate: '200'
+    resolution: '100'
+    ymin: '0'
+    ymax: '100'
+panels_024:
+  id: '86'
+  x: '440'
+  y: '200'
+  page_id: '4'
+  created_at: '2014-03-11 12:13:09.32724'
+  updated_at: '2014-03-11 12:14:59.429168'
+  panel_type_id: '1'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    key: key2
+    unit: ''
+    title: ''
+panels_025:
+  id: '75'
+  x: '20'
+  y: '20'
+  page_id: '3'
+  created_at: '2014-03-11 08:50:50.261274'
+  updated_at: '2014-03-11 08:54:46.194343'
+  panel_type_id: '1'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    key: imgkey
+    unit: ''
+    title: Image Key
+panels_026:
+  id: '58'
+  x: '260'
+  y: '220'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:00.324671'
+  updated_at: '2014-03-09 04:41:43.522164'
+  panel_type_id: '3'
+  properties: |
+    ---
+    height: '4'
+    width: '8'
+panels_027:
+  id: '63'
+  x: '660'
+  y: '500'
+  page_id: '1'
+  created_at: '2014-03-09 03:27:23.926446'
+  updated_at: '2014-03-09 03:48:50.880964'
+  panel_type_id: '9'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '8'
+    colour: '#00d92d'
+    keys:
+    - key1
+    - key2
+panels_028:
+  id: '55'
+  x: '60'
+  y: '20'
+  page_id: '1'
+  created_at: '2014-03-09 03:26:49.973982'
+  updated_at: '2014-03-09 04:41:44.348534'
+  panel_type_id: '1'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    key: key1
+    unit: ''
+    title: ''
+panels_029:
+  id: '56'
+  x: '20'
+  y: '200'
+  page_id: '1'
+  created_at: '2014-03-09 03:26:53.383063'
+  updated_at: '2014-03-09 03:49:25.820463'
+  panel_type_id: '6'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '4'
+    width: '9'
+    default_text: I'm a Label
+    key: ''
+panels_030:
+  id: '80'
+  x: '1260'
+  y: '260'
+  page_id: '3'
+  created_at: '2014-03-11 09:16:49.604726'
+  updated_at: '2014-03-11 10:04:54.003455'
+  panel_type_id: '2'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '25'
+    max: '100'
+    min: '0'
+    key: key1
+    title: Cows
+panels_031:
+  id: '54'
+  x: '300'
+  y: '60'
+  page_id: '2'
+  created_at: '2014-03-08 09:55:31.909099'
+  updated_at: '2014-03-08 22:34:04.529858'
+  panel_type_id: '14'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    height: '10'
+    width: '12'
+    colour: '#000000'
+    keys:
+    - dfgh
+panels_032:
+  id: '81'
+  x: '900'
+  y: '380'
+  page_id: '3'
+  created_at: '2014-03-11 09:17:18.729367'
+  updated_at: '2014-03-11 09:46:40.738166'
+  panel_type_id: '7'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '2'
+    colours:
+    - '#ff0000'
+    - '#ffec00'
+    - '#26ff00'
+    keys:
+    - key1
+    - key2
+    - key3
+panels_033:
+  id: '84'
+  x: '960'
+  y: '340'
+  page_id: '3'
+  created_at: '2014-03-11 09:17:24.704222'
+  updated_at: '2014-03-11 09:46:41.297076'
+  panel_type_id: '15'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '4'
+    colours:
+    - '#ff0000'
+    - '#daff00'
+    - '#1aff00'
+    keys:
+    - key1
+    - key2
+    - key3
+panels_034:
+  id: '83'
+  x: '1060'
+  y: '260'
+  page_id: '3'
+  created_at: '2014-03-11 09:17:22.705918'
+  updated_at: '2014-03-11 09:46:42.051183'
+  panel_type_id: '9'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    size: '8'
+    colour: '#2500fd'
+    labels:
+    - Sheep
+    - Bricks
+    - Wood
+    keys:
+    - key1
+    - key2
+    - key3
+panels_035:
+  id: '87'
+  x: '300'
+  y: '420'
+  page_id: '4'
+  created_at: '2014-03-11 12:13:13.400772'
+  updated_at: '2014-03-11 12:17:39.600662'
+  panel_type_id: '1'
+  properties: |
+    --- !ruby/hash:ActionController::Parameters
+    key: comp
+    unit: ''
+    title: ''

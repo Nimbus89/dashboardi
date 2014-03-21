@@ -1,31 +1,11 @@
 class PanelsController < ApplicationController
   before_action :set_panel, only: [:show, :edit, :update, :destroy]
 
-  # GET /panels
-  # GET /panels.json
-  def index
-    @panels = Panel.all
-  end
-
-  # GET /panels/1
-  # GET /panels/1.json
   def show
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
-  # GET /panels/new
-  def new
-    @panel = Panel.new(panel_type_id: params[:panel_type_id], page_id: params[:page_id])
   end
 
   # GET /panels/1/edit
   def edit
-    respond_to do |format|
-      format.js
-    end
   end
 
   # POST /panels
@@ -39,27 +19,22 @@ class PanelsController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      if @panel.save
-        format.html { redirect_to @panel, notice: 'Panel was successfully created.' }
-        format.js { redirect_to @panel }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @panel.errors, status: :unprocessable_entity }
-      end
+
+    if @panel.save
+      redirect_to @panel
+    else
+      render json: @panel.errors, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /panels/1
   # PATCH/PUT /panels/1.json
   def update
     respond_to do |format|
-      puts "\nPanel Params:" + panel_params.to_s + "\n"
       if @panel.update(panel_params)
-        format.html { redirect_to @panel, notice: 'Panel was successfully updated.' }
         format.js
       else
-        format.html { render action: 'edit' }
         format.json { render json: @panel.errors, status: :unprocessable_entity }
       end
     end
@@ -70,10 +45,6 @@ class PanelsController < ApplicationController
   def destroy
     topage = @panel.page
     @panel.destroy
-    respond_to do |format|
-      format.html { redirect_to topage }
-      format.js
-    end
   end
 
   private

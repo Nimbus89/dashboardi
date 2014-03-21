@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
   setup do
-    @project = projects(:one)
+    @project = projects(:projects_001)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, project: { date_created: @project.date_created, description: @project.description, last_modified: @project.last_modified, name: @project.name, user_id: @project.user_id }
+      post :create, project: { date_created: @project.date_created, description: @project.description, last_modified: @project.last_modified, name: @project.name + "_new", user_id: @project.user_id }
     end
 
     assert_redirected_to project_path(assigns(:project))

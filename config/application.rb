@@ -12,6 +12,8 @@ module OpenVisu
 
   	config.assets.precompile += ['editor.js', 'editor.css', 'visualisation.js', 'visualisation.css']
 
+    config.i18n.enforce_available_locales = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

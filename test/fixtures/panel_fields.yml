@@ -1,11 +1,441 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  field_type: MyString
+---
+panel_fields_001:
+  id: '1'
+  name: title
+  field_type: text_field
+  panel_type_id: '1'
+  created_at: '2014-01-16 18:05:56.503405'
+  updated_at: '2014-01-16 18:05:56.503405'
+  default_value: 
+panel_fields_002:
+  id: '2'
+  name: unit
+  field_type: text_field
+  panel_type_id: '1'
+  created_at: '2014-01-16 18:05:56.505625'
+  updated_at: '2014-01-16 18:05:56.505625'
+  default_value: 
+panel_fields_003:
+  id: '3'
+  name: key
+  field_type: text_field
+  panel_type_id: '1'
+  created_at: '2014-01-16 18:05:56.506626'
+  updated_at: '2014-01-16 18:05:56.506626'
+  default_value: 
+panel_fields_004:
+  id: '4'
+  name: title
+  field_type: text_field
+  panel_type_id: '2'
+  created_at: '2014-01-16 18:05:56.508777'
+  updated_at: '2014-01-16 18:05:56.508777'
+  default_value: 
+panel_fields_005:
+  id: '5'
+  name: key
+  field_type: text_field
+  panel_type_id: '2'
+  created_at: '2014-01-16 18:05:56.509737'
+  updated_at: '2014-01-16 18:05:56.509737'
+  default_value: 
+panel_fields_006:
+  id: '6'
+  name: min
+  field_type: text_field
+  panel_type_id: '2'
+  created_at: '2014-01-16 18:05:56.510719'
+  updated_at: '2014-01-16 18:05:56.510719'
+  default_value: 
+panel_fields_007:
+  id: '7'
+  name: max
+  field_type: text_field
+  panel_type_id: '2'
+  created_at: '2014-01-16 18:05:56.511643'
+  updated_at: '2014-01-16 18:05:56.511643'
+  default_value: 
+panel_fields_008:
+  id: '8'
+  name: navagate_to
+  field_type: page_select
+  panel_type_id: '3'
+  created_at: '2014-01-16 18:05:56.513635'
+  updated_at: '2014-01-16 18:05:56.513635'
+  default_value: 
+panel_fields_009:
+  id: '9'
+  name: link_text
+  field_type: text_field
+  panel_type_id: '3'
+  created_at: '2014-01-16 18:05:56.514588'
+  updated_at: '2014-01-16 18:05:56.514588'
+  default_value: 
+panel_fields_010:
+  id: '10'
+  name: ymax
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-01-16 18:05:56.516504'
+  updated_at: '2014-01-16 18:05:56.516504'
+  default_value: 
+panel_fields_011:
+  id: '11'
+  name: ymin
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-01-16 18:05:56.517497'
+  updated_at: '2014-01-16 18:05:56.517497'
+  default_value: 
+panel_fields_012:
+  id: '12'
+  name: resolution
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-01-16 18:05:56.518413'
+  updated_at: '2014-01-16 18:05:56.518413'
+  default_value: 
+panel_fields_013:
+  id: '13'
+  name: refreshRate
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-01-16 18:05:56.519282'
+  updated_at: '2014-01-16 18:05:56.519282'
+  default_value: 
+panel_fields_014:
+  id: '14'
+  name: keys
+  field_type: string_array
+  panel_type_id: '4'
+  created_at: '2014-01-16 18:05:56.520155'
+  updated_at: '2014-01-16 18:05:56.520155'
+  default_value: 
+panel_fields_015:
+  id: '15'
+  name: key
+  field_type: text_field
+  panel_type_id: '5'
+  created_at: '2014-01-18 15:25:52.477178'
+  updated_at: '2014-01-18 15:25:52.477178'
+  default_value: 
+panel_fields_016:
+  id: '16'
+  name: images
+  field_type: string_array
+  panel_type_id: '5'
+  created_at: '2014-01-18 15:25:52.481082'
+  updated_at: '2014-01-18 15:25:52.481082'
+  default_value: 
+panel_fields_017:
+  id: '17'
+  name: key
+  field_type: text_field
+  panel_type_id: '6'
+  created_at: '2014-03-04 02:49:12.609446'
+  updated_at: '2014-03-04 02:49:12.609446'
+  default_value: 
+panel_fields_018:
+  id: '18'
+  name: default_text
+  field_type: text_field
+  panel_type_id: '6'
+  created_at: '2014-03-04 02:49:12.61258'
+  updated_at: '2014-03-04 02:49:12.61258'
+  default_value: 
+panel_fields_019:
+  id: '19'
+  name: keys
+  field_type: string_array
+  panel_type_id: '7'
+  created_at: '2014-03-04 06:51:35.58461'
+  updated_at: '2014-03-04 06:51:35.58461'
+  default_value: 
+panel_fields_020:
+  id: '20'
+  name: colours
+  field_type: colour_array
+  panel_type_id: '7'
+  created_at: '2014-03-04 06:51:35.587145'
+  updated_at: '2014-03-04 06:51:35.587145'
+  default_value: 
+panel_fields_021:
+  id: '21'
+  name: keys
+  field_type: string_array
+  panel_type_id: '8'
+  created_at: '2014-03-06 18:51:23.93157'
+  updated_at: '2014-03-06 18:51:23.93157'
+  default_value: 
+panel_fields_022:
+  id: '22'
+  name: colours
+  field_type: colour_array
+  panel_type_id: '8'
+  created_at: '2014-03-06 18:51:23.934848'
+  updated_at: '2014-03-06 18:51:23.934848'
+  default_value: 
+panel_fields_023:
+  id: '23'
+  name: keys
+  field_type: string_array
+  panel_type_id: '9'
+  created_at: '2014-03-06 20:55:48.332552'
+  updated_at: '2014-03-06 20:55:48.332552'
+  default_value: 
+panel_fields_024:
+  id: '24'
+  name: labels
+  field_type: string_array
+  panel_type_id: '9'
+  created_at: '2014-03-06 20:55:48.33443'
+  updated_at: '2014-03-06 20:55:48.33443'
+  default_value: 
+panel_fields_025:
+  id: '25'
+  name: colour
+  field_type: colour
+  panel_type_id: '9'
+  created_at: '2014-03-06 20:55:48.335394'
+  updated_at: '2014-03-06 20:55:48.335394'
+  default_value: 
+panel_fields_026:
+  id: '30'
+  name: colours
+  field_type: colour_array
   panel_type_id: 
-
-two:
-  name: MyString
-  field_type: MyString
+  created_at: '2014-03-07 02:11:55.525093'
+  updated_at: '2014-03-07 02:11:55.525093'
+  default_value: 
+panel_fields_027:
+  id: '29'
+  name: keys
+  field_type: string_array
   panel_type_id: 
+  created_at: '2014-03-07 02:11:55.524104'
+  updated_at: '2014-03-07 02:11:55.524104'
+  default_value: 
+panel_fields_028:
+  id: '28'
+  name: colour
+  field_type: colour
+  panel_type_id: 
+  created_at: '2014-03-07 02:11:55.513316'
+  updated_at: '2014-03-07 02:11:55.513316'
+  default_value: 
+panel_fields_029:
+  id: '27'
+  name: labels
+  field_type: string_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:11:55.51237'
+  updated_at: '2014-03-07 02:11:55.51237'
+  default_value: 
+panel_fields_030:
+  id: '26'
+  name: keys
+  field_type: string_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:11:55.510797'
+  updated_at: '2014-03-07 02:11:55.510797'
+  default_value: 
+panel_fields_031:
+  id: '35'
+  name: colours
+  field_type: colour_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:49:08.992671'
+  updated_at: '2014-03-07 02:49:08.992671'
+  default_value: 
+panel_fields_032:
+  id: '34'
+  name: keys
+  field_type: string_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:49:08.991698'
+  updated_at: '2014-03-07 02:49:08.991698'
+  default_value: 
+panel_fields_033:
+  id: '33'
+  name: colour
+  field_type: colour
+  panel_type_id: 
+  created_at: '2014-03-07 02:49:08.981506'
+  updated_at: '2014-03-07 02:49:08.981506'
+  default_value: 
+panel_fields_034:
+  id: '32'
+  name: labels
+  field_type: string_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:49:08.980574'
+  updated_at: '2014-03-07 02:49:08.980574'
+  default_value: 
+panel_fields_035:
+  id: '31'
+  name: keys
+  field_type: string_array
+  panel_type_id: 
+  created_at: '2014-03-07 02:49:08.978611'
+  updated_at: '2014-03-07 02:49:08.978611'
+  default_value: 
+panel_fields_036:
+  id: '36'
+  name: keys
+  field_type: string_array
+  panel_type_id: '14'
+  created_at: '2014-03-07 02:53:56.568819'
+  updated_at: '2014-03-07 02:53:56.568819'
+  default_value: 
+panel_fields_037:
+  id: '37'
+  name: labels
+  field_type: string_array
+  panel_type_id: '14'
+  created_at: '2014-03-07 02:53:56.5706'
+  updated_at: '2014-03-07 02:53:56.5706'
+  default_value: 
+panel_fields_038:
+  id: '38'
+  name: colour
+  field_type: colour
+  panel_type_id: '14'
+  created_at: '2014-03-07 02:53:56.571358'
+  updated_at: '2014-03-07 02:53:56.571358'
+  default_value: 
+panel_fields_039:
+  id: '39'
+  name: keys
+  field_type: string_array
+  panel_type_id: '15'
+  created_at: '2014-03-07 02:53:56.582165'
+  updated_at: '2014-03-07 02:53:56.582165'
+  default_value: 
+panel_fields_040:
+  id: '40'
+  name: colours
+  field_type: colour_array
+  panel_type_id: '15'
+  created_at: '2014-03-07 02:53:56.583119'
+  updated_at: '2014-03-07 02:53:56.583119'
+  default_value: 
+panel_fields_041:
+  id: '41'
+  name: width
+  field_type: text_field
+  panel_type_id: '6'
+  created_at: '2014-03-08 05:36:26.027104'
+  updated_at: '2014-03-08 09:08:08.621011'
+  default_value: '9'
+panel_fields_042:
+  id: '42'
+  name: height
+  field_type: text_field
+  panel_type_id: '6'
+  created_at: '2014-03-08 05:36:26.031124'
+  updated_at: '2014-03-08 09:08:08.627762'
+  default_value: '4'
+panel_fields_043:
+  id: '43'
+  name: width
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-03-08 09:39:58.444184'
+  updated_at: '2014-03-08 09:39:58.444184'
+  default_value: '28'
+panel_fields_044:
+  id: '44'
+  name: height
+  field_type: text_field
+  panel_type_id: '4'
+  created_at: '2014-03-08 09:39:58.446086'
+  updated_at: '2014-03-08 09:39:58.446086'
+  default_value: '16'
+panel_fields_045:
+  id: '45'
+  name: width
+  field_type: text_field
+  panel_type_id: '3'
+  created_at: '2014-03-08 09:39:58.44883'
+  updated_at: '2014-03-08 09:39:58.44883'
+  default_value: '8'
+panel_fields_046:
+  id: '46'
+  name: height
+  field_type: text_field
+  panel_type_id: '3'
+  created_at: '2014-03-08 09:39:58.449915'
+  updated_at: '2014-03-08 09:39:58.449915'
+  default_value: '4'
+panel_fields_047:
+  id: '47'
+  name: width
+  field_type: text_field
+  panel_type_id: '5'
+  created_at: '2014-03-08 09:39:58.453025'
+  updated_at: '2014-03-08 09:39:58.453025'
+  default_value: '10'
+panel_fields_048:
+  id: '48'
+  name: height
+  field_type: text_field
+  panel_type_id: '5'
+  created_at: '2014-03-08 09:39:58.454006'
+  updated_at: '2014-03-08 09:39:58.454006'
+  default_value: '10'
+panel_fields_049:
+  id: '49'
+  name: width
+  field_type: text_field
+  panel_type_id: '14'
+  created_at: '2014-03-08 09:39:58.456257'
+  updated_at: '2014-03-08 09:39:58.456257'
+  default_value: '12'
+panel_fields_050:
+  id: '50'
+  name: height
+  field_type: text_field
+  panel_type_id: '14'
+  created_at: '2014-03-08 09:39:58.45723'
+  updated_at: '2014-03-08 09:39:58.45723'
+  default_value: '10'
+panel_fields_051:
+  id: '51'
+  name: size
+  field_type: text_field
+  panel_type_id: '2'
+  created_at: '2014-03-08 09:39:58.459943'
+  updated_at: '2014-03-08 09:39:58.459943'
+  default_value: '8'
+panel_fields_052:
+  id: '52'
+  name: size
+  field_type: text_field
+  panel_type_id: '7'
+  created_at: '2014-03-08 09:39:58.462122'
+  updated_at: '2014-03-08 09:39:58.462122'
+  default_value: '8'
+panel_fields_053:
+  id: '53'
+  name: size
+  field_type: text_field
+  panel_type_id: '8'
+  created_at: '2014-03-08 09:39:58.464224'
+  updated_at: '2014-03-08 09:39:58.464224'
+  default_value: '8'
+panel_fields_054:
+  id: '54'
+  name: size
+  field_type: text_field
+  panel_type_id: '9'
+  created_at: '2014-03-08 09:39:58.466551'
+  updated_at: '2014-03-08 09:39:58.466551'
+  default_value: '8'
+panel_fields_055:
+  id: '55'
+  name: size
+  field_type: text_field
+  panel_type_id: '15'
+  created_at: '2014-03-08 09:39:58.469516'
+  updated_at: '2014-03-08 09:39:58.469516'
+  default_value: '8'

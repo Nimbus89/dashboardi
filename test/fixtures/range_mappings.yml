@@ -1,13 +1,73 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  max_value: MyString
-  min_value: MyString
-  output_value: MyString
-  mapping_function_id: 
-
-two:
-  max_value: MyString
-  min_value: MyString
-  output_value: MyString
-  mapping_function_id: 
+---
+range_mappings_001:
+  id: '1'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:26:45.939547'
+  updated_at: '2014-02-01 02:26:45.939547'
+range_mappings_002:
+  id: '2'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:27:34.859815'
+  updated_at: '2014-02-01 02:27:34.859815'
+range_mappings_003:
+  id: '3'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:27:55.484011'
+  updated_at: '2014-02-01 02:27:55.484011'
+range_mappings_004:
+  id: '4'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:28:07.20856'
+  updated_at: '2014-02-01 02:28:07.20856'
+range_mappings_005:
+  id: '5'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:28:07.210084'
+  updated_at: '2014-02-01 02:28:07.210084'
+range_mappings_006:
+  id: '6'
+  max_value: qwe
+  min_value: qwe
+  output_value: qwe
+  mapping_function_id: '3'
+  created_at: '2014-02-01 02:28:07.211476'
+  updated_at: '2014-02-01 02:28:07.211476'
+range_mappings_007:
+  id: '11'
+  max_value: '100'
+  min_value: '0'
+  output_value: '2'
+  mapping_function_id: '1'
+  created_at: '2014-02-01 18:59:51.955052'
+  updated_at: '2014-02-01 18:59:51.955052'
+range_mappings_008:
+  id: '12'
+  max_value: '200'
+  min_value: '101'
+  output_value: '3'
+  mapping_function_id: '1'
+  created_at: '2014-02-01 19:25:41.482872'
+  updated_at: '2014-02-01 19:25:41.482872'
+range_mappings_009:
+  id: '13'
+  max_value: ''
+  min_value: ''
+  output_value: ''
+  mapping_function_id: '4'
+  created_at: '2014-03-13 04:01:25.180203'
+  updated_at: '2014-03-13 04:01:25.180203'

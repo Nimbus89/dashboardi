@@ -1,7 +1,78 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+---
+panel_types_001:
+  id: '1'
+  name: value
+  created_at: '2014-01-16 18:05:56.44771'
+  updated_at: '2014-01-16 18:05:56.44771'
+  sizex: '240'
+  sizey: '160'
+panel_types_002:
+  id: '6'
+  name: label
+  created_at: '2014-03-04 02:49:12.536066'
+  updated_at: '2014-03-08 05:36:25.980141'
+  sizex: '0'
+  sizey: '0'
+panel_types_003:
+  id: '4'
+  name: timeseries
+  created_at: '2014-01-16 18:05:56.515485'
+  updated_at: '2014-03-08 09:39:58.394465'
+  sizex: '0'
+  sizey: '0'
+panel_types_004:
+  id: '3'
+  name: navbutton
+  created_at: '2014-01-16 18:05:56.512608'
+  updated_at: '2014-03-08 09:39:58.447844'
+  sizex: '0'
+  sizey: '0'
+panel_types_005:
+  id: '5'
+  name: image
+  created_at: '2014-01-18 15:25:52.421335'
+  updated_at: '2014-03-08 09:39:58.451261'
+  sizex: '0'
+  sizey: '0'
+panel_types_006:
+  id: '14'
+  name: bar_chart
+  created_at: '2014-03-07 02:53:56.521482'
+  updated_at: '2014-03-08 09:39:58.455379'
+  sizex: '0'
+  sizey: '0'
+panel_types_007:
+  id: '2'
+  name: gaugepanel
+  created_at: '2014-01-16 18:05:56.507639'
+  updated_at: '2014-03-08 09:39:58.458959'
+  sizex: '0'
+  sizey: '0'
+panel_types_008:
+  id: '7'
+  name: pie_chart
+  created_at: '2014-03-04 06:51:35.532075'
+  updated_at: '2014-03-08 09:39:58.461143'
+  sizex: '0'
+  sizey: '0'
+panel_types_009:
+  id: '8'
+  name: doughnut_chart
+  created_at: '2014-03-06 18:51:23.885451'
+  updated_at: '2014-03-08 09:39:58.463479'
+  sizex: '0'
+  sizey: '0'
+panel_types_010:
+  id: '9'
+  name: radar_chart
+  created_at: '2014-03-06 20:55:48.289183'
+  updated_at: '2014-03-08 09:39:58.465602'
+  sizex: '0'
+  sizey: '0'
+panel_types_011:
+  id: '15'
+  name: polar_chart
+  created_at: '2014-03-07 02:53:56.580719'
+  updated_at: '2014-03-08 09:39:58.467888'
+  sizex: '0'
+  sizey: '0'

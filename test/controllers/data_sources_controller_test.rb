@@ -2,31 +2,20 @@ require 'test_helper'
 
 class DataSourcesControllerTest < ActionController::TestCase
   setup do
-    @data_source = data_sources(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:data_sources)
+    @data_source = data_sources(:data_sources_001)
   end
 
   test "should get new" do
-    get :new
+    get :new, data_source_type_id: @data_source.data_source_type_id
     assert_response :success
   end
 
   test "should create data_source" do
     assert_difference('DataSource.count') do
-      post :create, data_source: {  }
+      post :create, data_source: { data_source_type_id: @data_source.data_source_type_id, project_id: @data_source.project_id, fields: @data_source.fields }
     end
 
-    assert_redirected_to data_source_path(assigns(:data_source))
-  end
-
-  test "should show data_source" do
-    get :show, id: @data_source
-    assert_response :success
+   assert_redirected_to project_path(@project)
   end
 
   test "should get edit" do
@@ -35,8 +24,8 @@ class DataSourcesControllerTest < ActionController::TestCase
   end
 
   test "should update data_source" do
-    patch :update, id: @data_source, data_source: {  }
-    assert_redirected_to data_source_path(assigns(:data_source))
+    patch :update, id: @data_source, data_source: { data_source_type_id: @data_source.data_source_type_id, project_id: @data_source.project_id, fields: @data_source.fields }
+    assert_redirected_to project_path(@project)
   end
 
   test "should destroy data_source" do
@@ -44,6 +33,6 @@ class DataSourcesControllerTest < ActionController::TestCase
       delete :destroy, id: @data_source
     end
 
-    assert_redirected_to data_sources_path
+    assert_redirected_to project_path(@project)
   end
 end

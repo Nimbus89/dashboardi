@@ -1,15 +1,18 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  date_created: 2013-10-20 15:39:59
-  last_modified: 2013-10-20 15:39:59
-  description: MyText
-  user_id: 1
-
-two:
-  name: MyString
-  date_created: 2013-10-20 15:39:59
-  last_modified: 2013-10-20 15:39:59
-  description: MyText
-  user_id: 1
+---
+projects_001:
+  id: '1'
+  name: Example Project
+  date_created: '2014-01-16 18:47:15.232041'
+  last_modified: '2014-01-16 18:47:15.232105'
+  description: jshfkjsdhf
+  user_id: '1'
+  created_at: '2014-01-16 18:47:15.243811'
+  updated_at: '2014-03-13 06:46:34.610361'
+  startpage_id: '1'
+  screensize_x: '1920'
+  screensize_y: '1080'
+  private: f
+  background_colour: '#000000'
+  foreground_colour: '#daff00'
+  panel_colour: '#000000'
+  text_colour: '#ff5bd6'

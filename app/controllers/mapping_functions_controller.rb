@@ -1,18 +1,6 @@
 class MappingFunctionsController < ApplicationController
   before_action :set_project
-  before_action :set_mapping_function, only: [:show, :edit, :update, :destroy]
-
-  # GET /mapping_functions
-  # GET /mapping_functions.json
-  def index
-    redirect_to @project
-  end
-
-  # GET /mapping_functions/1
-  # GET /mapping_functions/1.json
-  def show
-    redirect_to @project
-  end
+  before_action :set_mapping_function, only: [:edit, :update, :destroy]
 
   # GET /mapping_functions/new
   def new

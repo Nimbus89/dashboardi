@@ -1,11 +1,42 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  data_source_type_id: 
-  project_id: 
-  fields: MyText
-
-two:
-  data_source_type_id: 
-  project_id: 
-  fields: MyText
+---
+data_sources_001:
+  id: '18'
+  data_source_type_id: '4'
+  project_id: '1'
+  fields: |
+    --- !ruby/hash:ActionController::Parameters
+    output_type: integer
+    step_size: '5'
+    keys:
+    - key1
+    - key2
+    - key3
+    max: '100'
+    min: '0'
+  created_at: '2014-02-01 22:33:28.990872'
+  updated_at: '2014-03-07 01:35:34.408118'
+data_sources_002:
+  id: '22'
+  data_source_type_id: '5'
+  project_id: '1'
+  fields: |
+    --- !ruby/hash:ActionController::Parameters
+    addresses:
+    - http://www.google.com
+    - asdfasdfsadfasdfasfsadfas
+  created_at: '2014-03-09 05:45:14.524938'
+  updated_at: '2014-03-09 05:50:30.905223'
+data_sources_003:
+  id: '23'
+  data_source_type_id: '4'
+  project_id: '1'
+  fields: |
+    --- !ruby/hash:ActionController::Parameters
+    output_type: integer
+    step_size: '0'
+    keys:
+    - imgkey
+    max: '1'
+    min: '3'
+  created_at: '2014-03-11 08:45:41.354112'
+  updated_at: '2014-03-11 08:45:55.500144'

@@ -1,17 +1,7 @@
 class CombinationFunctionsController < ApplicationController
   before_action :set_project
-  before_action :set_combination_function, only: [:show, :edit, :update, :destroy]
+  before_action :set_combination_function, only: [:edit, :update, :destroy]
 
-  # GET /combination_functions
-  # GET /combination_functions.json
-  def index
-    @combination_functions = @project.combination_functions.all
-  end
-
-  # GET /combination_functions/1
-  # GET /combination_functions/1.json
-  def show
-  end
 
   # GET /combination_functions/new
   def new

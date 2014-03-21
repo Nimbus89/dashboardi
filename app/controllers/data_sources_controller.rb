@@ -1,21 +1,9 @@
 class DataSourcesController < ApplicationController
-  before_action :set_data_source, only: [:show, :edit, :update, :destroy]
+  before_action :set_data_source, only: [:edit, :update, :destroy]
 
   before_filter :authenticate_user!
 
-  before_filter :check_user, only: [:show, :edit, :update, :destroy]
-
-  # GET /data_sources
-  # GET /data_sources.json
-  def index
-    @data_sources = DataSource.all
-  end
-
-  # GET /data_sources/1
-  # GET /data_sources/1.json
-  def show
-    redirect_to @data_source.project
-  end
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /data_sources/new
   def new
@@ -47,7 +35,7 @@ class DataSourcesController < ApplicationController
   def update
     respond_to do |format|
       if @data_source.update(data_source_params)
-        format.html { redirect_to @data_source, notice: 'Data source was successfully updated.' }
+        format.html { redirect_to @data_source.project, notice: 'Data source was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
