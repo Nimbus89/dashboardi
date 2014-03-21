@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @project = @page.project
+    @pages = @project.pages.includes(:panels)
     @startpage_id = @page.id
     @project_json = render_to_string( "visualisation/project", locals: {project: @project}, layout: false)
     render "visualisation/show"
@@ -34,6 +35,7 @@ class PagesController < ApplicationController
 
   def edit  
     @palette = PanelType.all
+    @panels = @page.panels.includes(:panel_type)
     render "editor/edit"
   end
 

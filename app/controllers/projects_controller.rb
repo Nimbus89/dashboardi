@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_project, only: [:edit, :update, :destroy, :show]
 
 
   before_filter :authenticate_user!
@@ -18,6 +17,7 @@ class ProjectsController < ApplicationController
     @new_page = Page.new({project: @project, name: generate_new_page_name})
     @new_data_source = DataSource.new({project: @project})
     @pages_list = @project.pages.map {|i| [i.id, i.name]}
+    @data_sources = @project.data_sources.includes(:data_source_type)
   end
 
   # GET /projects/new
@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
 
 
     def check_user
-      fail "Wrong User" unless current_user == Project.find(params[:id]).user
+      fail "Wrong User" unless current_user == @project.user
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -99,9 +99,9 @@ class ProjectsController < ApplicationController
     end
 
     def generate_new_page_name
-      if (@project.pages.find_by name: "New Page") != nil
+      if (@project.pages.where name: "New Page").size != 0
         i = 0
-        while (@project.pages.find_by name: "New Page (#{i})") != nil
+        while (@project.pages.where name: "New Page (#{i})").size != 0
           i = i + 1
         end
         "New Page (#{i})"

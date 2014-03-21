@@ -48,13 +48,14 @@ json.mapping_functions do
 end
 
 json.set! :pages do
-	@project.pages.each do |page|
+	@pages.each do |page|
 		json.set! page.id do
 
 			json.name page.name
 
 			json.set! :panels do
-				page.panels.each do |panel|
+			panels = page.panels.includes(:panel_type)
+				panels.each do |panel|
 					json.set! panel.id do
 						json.id panel.id
 						json.text_colour @project.text_colour

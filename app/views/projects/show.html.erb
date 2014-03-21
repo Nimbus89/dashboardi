@@ -87,7 +87,7 @@
   </thead>
 
   <tbody>
-    <% @project.data_sources.each do |data_source| %>
+    <% @data_sources.each do |data_source| %>
       <tr>
         <td><span title="<%= data_source.fields.to_json %>"><%= data_source.data_source_type.name %></span></td>
         <td><%= link_to "Edit", edit_data_source_path(data_source), class: "btn btn-info" %></td>

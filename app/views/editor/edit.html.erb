@@ -1,6 +1,6 @@
 <div class="workspace" data-pageID="<%= @page.id %>">
 	<div class="workspace-inner" style="height:<%= @page.project.screensize_y %>px; width:<%= @page.project.screensize_x %>px;">
-	<% @page.panels.each do |panel| %>
+	<% @panels.each do |panel| %>
 		<%= render partial: "/editor/panel", locals: {panel: panel} %>
 	<% end %>
 	</div>
