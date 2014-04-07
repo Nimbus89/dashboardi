@@ -45,6 +45,7 @@ class @RadarChartPanel extends @Panel
 
     {labels: @labels, datasets: [{data: data, fillColor : @colour_rgba(0.5), strokeColor : @colour_rgba(1),  pointColor : @colour_rgba(1)}] }
   hexToRgb: (hex) =>
+    #source: http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
     result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
     if result then {
         r: parseInt(result[1], 16),

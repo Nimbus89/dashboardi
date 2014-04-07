@@ -7,11 +7,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  gem 'sdoc', require: false
-end
-
 gem 'devise'
 gem 'rails-backbone'
 gem 'handlebars_assets'
@@ -25,10 +20,19 @@ gem 'net-ping'
 group :development do
  	gem "rails-erd"
  	gem "rack-mini-profiler"
+ 	gem 'jasmine-rails'
 end
 
 group :production do
 	gem 'rails_12factor'
+end
+
+group :doc do
+  gem 'sdoc', require: false
+end
+
+group :test do
+  gem 'jasmine-rails'
 end
 
 ruby "2.0.0"
